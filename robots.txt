@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://munikc.com/sitemap.xml
+# Sitemap ready for production: https://munikc.com/sitemap.xml
