@@ -32,9 +32,9 @@
 
   /** Links displayed on the left side of the header */
   const navLinksLeft = [
-    { href: '/menus.html', label: 'Menus' },
-    { href: '/about.html', label: 'About' },
-    { href: '/contact.html', label: 'Contact' }
+    { href: './menus.html', label: 'Menus' },
+    { href: './about.html', label: 'About' },
+    { href: './contact.html', label: 'Contact' }
   ];
 
   /** Links displayed on the right side of the header (currently empty) */
@@ -69,7 +69,7 @@
           </div>
         </div>
         <div class="header-title">
-          <a href="/">MuNi Bar and Eatery</a>
+          <a href="./">MuNi Bar and Eatery</a>
         </div>
         <div class="nav-right">
           <div class="pages">
@@ -99,7 +99,7 @@
       `<a href="${link.href}" class="nav-link">${link.label}</a>`
     ).join('')}
     <hr class="divider">
-    <a href="/careers.html" class="nav-link">Careers</a>
+    <a href="./careers.html" class="nav-link">Careers</a>
   `;
 
   /* ==========================================================================

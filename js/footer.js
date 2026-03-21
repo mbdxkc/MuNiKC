@@ -51,8 +51,8 @@
   const footerHTML = `
     <div class="footer-content">
       <nav class="footer-left" aria-label="footer navigation">
-        <a href="/careers.html">Careers</a>
-        <a href="/contact.html">Contact</a>
+        <a href="./careers.html">Careers</a>
+        <a href="./contact.html">Contact</a>
         <a href="${social.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
       <address class="footer-center">
@@ -61,7 +61,7 @@
         </a>
       </address>
       <div class="footer-right">
-        <a href="/privacy.html">Privacy</a>
+        <a href="./privacy.html">Privacy</a>
         <span class="footer-copy">&copy; ${currentYear} MuNi KC</span>
       </div>
     </div>
