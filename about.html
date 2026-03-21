@@ -1,0 +1,190 @@
+<!--
+================================================================================
+  MuNi KC - About Page (about.html)
+================================================================================
+
+  @description  About page for MuNi KC featuring the establishment's mission,
+                team introductions, and space showcase. Provides visitors with
+                deeper context about the brand values and people behind MuNi.
+
+  @url          https://munikc.com/about
+
+  @sections     1. Page Header - Title and brief intro
+                2. Mission - Brand values and purpose statement
+                3. Team (#team) - Staff/owner introductions with photos
+                4. Space (#space) - Interior/atmosphere photo gallery
+
+  @anchors      #team, #space - Deep-linkable section anchors
+
+  @dependencies
+    - /style.css           Main stylesheet with design tokens and utilities
+    - /js/page-transition.js   Page transition animations
+    - /js/utils.js         Shared utility functions
+    - /js/header.js        Dynamic header/navigation injection
+    - /js/footer.js        Dynamic footer injection
+
+  @fonts        Nunito Sans (Google Fonts, weights 200-1000)
+
+  @accessibility
+    - Skip link to main content
+    - Semantic HTML5 structure
+    - ARIA roles on header, main, footer
+
+  @author       mediaBrilliance digitalxtudio
+  @project      MuNi KC Website
+  @version      1.0.0
+================================================================================
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>About | MuNi KC</title>
+    <meta name="description" content="Learn about MuNi KC, our mission, our team, and the space we've created for the River Market community." />
+    <link rel="canonical" href="https://munikc.com/about" />
+
+    <meta property="og:title" content="About | MuNi KC" />
+    <meta property="og:description" content="Learn about MuNi KC and our team." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://munikc.com/about" />
+    <meta property="og:image" content="/og.png" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="page-transition" aria-hidden="true"></div>
+    <a class="skip-link" href="#main_container">skip to main content</a>
+
+    <header id="site-header" class="site-header" role="banner"></header>
+
+    <div class="mobile-menu" aria-label="mobile navigation"></div>
+
+    <main id="main_container" role="main">
+
+      <!-- ================================================================
+           PAGE HEADER
+           Introduces the About page with brand positioning statement.
+           Uses container-sm for optimal reading width.
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm text-center">
+          <h1 class="text-4xl mb-md">About MuNi</h1>
+          <p class="text-lg text-muted">
+            A first-rate experience and a safe meeting place for the community.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           MISSION SECTION
+           Core brand values and purpose statement.
+           Establishes the "why" behind MuNi's existence.
+           Key themes: community, value, hospitality, togetherness.
+           Uses section-sm for tighter vertical spacing following header.
+           ================================================================ -->
+      <section class="section-sm">
+        <div class="container container-sm">
+          <h2 class="text-2xl mb-md">Our Mission</h2>
+          <p class="mb-md">
+            MuNi provides a good environment at a great value to enjoy the community, food, drinks,
+            and city camaraderie in one space. We believe in thoughtful hospitality and creating
+            experiences that bring people together.
+          </p>
+          <p class="text-muted">
+            Located in the heart of River Market on the KC Streetcar line, we're your neighborhood spot
+            for Mexican-Thai fusion, well-crafted drinks, and everything Kansas City.
+          </p>
+        </div>
+      </section>
+
+      <!-- Visual divider between major content sections -->
+      <hr class="divider container">
+
+      <!-- ================================================================
+           TEAM SECTION (#team)
+           Introduces the people behind MuNi.
+           Deep-linkable via #team anchor for direct navigation.
+
+           Structure: 3-column responsive grid of team member cards
+           Each card contains:
+           - Photo placeholder (200px height, to be replaced with actual images)
+           - Name (h3)
+           - Role/title
+
+           TODO: Replace placeholder content with actual team photos and bios
+           ================================================================ -->
+      <section class="section" id="team">
+        <div class="container">
+          <h2 class="text-2xl mb-lg text-center">The Team</h2>
+          <div class="grid grid-3 grid-auto-fit">
+            <!-- Team Member Card 1 -->
+            <div class="card text-center">
+              <div class="team-photo mb-md" style="height:200px;background:rgba(255,255,255,.05);border-radius:var(--radius-sm);"></div>
+              <h3 class="text-lg">Team Member</h3>
+              <p class="text-sm text-muted">Role</p>
+            </div>
+            <!-- Team Member Card 2 -->
+            <div class="card text-center">
+              <div class="team-photo mb-md" style="height:200px;background:rgba(255,255,255,.05);border-radius:var(--radius-sm);"></div>
+              <h3 class="text-lg">Team Member</h3>
+              <p class="text-sm text-muted">Role</p>
+            </div>
+            <!-- Team Member Card 3 -->
+            <div class="card text-center">
+              <div class="team-photo mb-md" style="height:200px;background:rgba(255,255,255,.05);border-radius:var(--radius-sm);"></div>
+              <h3 class="text-lg">Team Member</h3>
+              <p class="text-sm text-muted">Role</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual divider between major content sections -->
+      <hr class="divider container">
+
+      <!-- ================================================================
+           SPACE SECTION (#space)
+           Showcases the physical environment and atmosphere.
+           Deep-linkable via #space anchor for direct navigation.
+
+           Structure: 2-column grid for interior photos
+           Emphasizes the welcoming, casual atmosphere.
+
+           TODO: Replace placeholder divs with actual interior photography
+           Consider adding lightbox functionality for full-size viewing
+           ================================================================ -->
+      <section class="section" id="space">
+        <div class="container">
+          <h2 class="text-2xl mb-lg text-center">The Space</h2>
+          <div class="grid grid-2 grid-auto-fit gap-lg">
+            <!-- Space Photo Placeholder 1 -->
+            <div class="space-photo" style="height:300px;background:rgba(255,255,255,.05);border-radius:var(--radius-lg);"></div>
+            <!-- Space Photo Placeholder 2 -->
+            <div class="space-photo" style="height:300px;background:rgba(255,255,255,.05);border-radius:var(--radius-lg);"></div>
+          </div>
+          <p class="text-center text-muted mt-lg">
+            Our space is designed to feel like home. Come as you are.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="site-footer" class="footer" role="contentinfo"></footer>
+
+    <script src="/js/page-transition.js" defer></script>
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+  </body>
+</html>

@@ -1,98 +1,319 @@
+<!--
+================================================================================
+  MuNi KC - Home Page (index.html)
+================================================================================
+
+  @description  Landing page for MuNi KC, a neighborhood bar and restaurant
+                located in River Market, Kansas City. This page serves as the
+                primary entry point for visitors, showcasing the brand identity,
+                mission preview, key features, and social presence.
+
+  @url          https://munikc.com/
+
+  @sections     1. Hero Section - Brand intro with primary CTAs
+                2. About Preview - Mission statement teaser
+                3. Quick Info Grid - Three-card feature highlights
+                4. Social Preview - Instagram feed integration placeholder
+
+  @dependencies
+    - /style.css           Main stylesheet with design tokens and utilities
+    - /js/page-transition.js   Page transition animations
+    - /js/utils.js         Shared utility functions
+    - /js/header.js        Dynamic header/navigation injection
+    - /js/footer.js        Dynamic footer injection
+
+  @fonts        Nunito Sans (Google Fonts, weights 200-1000)
+
+  @accessibility
+    - Skip link to main content
+    - Semantic HTML5 structure
+    - ARIA roles on header, main, footer
+    - External links have rel="noopener"
+
+  @author       mediaBrilliance digitalxtudio
+  @project      MuNi KC Website
+  @version      1.0.0
+================================================================================
+-->
 <!doctype html>
 <html lang="en">
   <head>
-  <!--
-  ============================================================================
-  project title
-  ============================================================================
-  @project    project name
-  @version    0.0
-  @author     author <email>
-  @date       year-mo-dy
-  @file       .html
-  @desc       page description
-  @license    (c) 
-  @requires   - /js/header.js, /js/footer.js, /js/page-transition.js
-              - /style.css
-  @a11y       - skip link, semantic html, wcag 2.1 aa compliant
-  ============================================================================
-  project v0.0 | page
-  ============================================================================
-  -->
-
-    <!-- core meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>page title</title>
-    <meta name="description" content="page description" />
-    <link rel="canonical" href="https://example.com/" />
+    <title>MuNi KC | River Market Bar & Restaurant</title>
+    <meta name="description" content="A first-rate experience and safe meeting place for the community. Well thought out drinks, food, and Kansas City camaraderie." />
+    <link rel="canonical" href="https://munikc.com/" />
 
-    <!-- social / previews -->
-    <meta property="og:title" content="site name" />
-    <meta property="og:description" content="site description" />
+    <meta property="og:title" content="MuNi KC" />
+    <meta property="og:description" content="River Market's neighborhood bar. Great drinks, great food, great community." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:url" content="https://munikc.com/" />
     <meta property="og:image" content="/og.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="site name" />
-    <meta name="twitter:description" content="site description" />
+    <meta name="twitter:title" content="MuNi KC" />
+    <meta name="twitter:description" content="River Market's neighborhood bar. Great drinks, great food, great community." />
     <meta name="twitter:image" content="/og.png" />
 
-    <!-- icons -->
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- styles -->
     <link rel="stylesheet" href="/style.css" />
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarOrPub",
+      "name": "MuNi KC",
+      "description": "Mexican-Thai fusion bar and restaurant in River Market. A first-rate experience and safe meeting place for the community.",
+      "url": "https://munikc.com",
+      "telephone": "",
+      "email": "Munihospitality@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "316 Delaware St",
+        "addressLocality": "Kansas City",
+        "addressRegion": "MO",
+        "postalCode": "64105",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.1114,
+        "longitude": -94.5863
+      },
+      "image": "https://munikc.com/og.png",
+      "servesCuisine": ["Mexican", "Thai", "American", "Fusion"],
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "16:00", "closes": "01:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "16:00", "closes": "01:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "16:00", "closes": "01:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "01:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "01:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "01:30" }
+      ],
+      "sameAs": [
+        "https://instagram.com/muni.kansascity",
+        "https://www.yelp.com/biz/muni-kansas-city"
+      ],
+      "hasMenu": "https://munikc.com/menus"
+    }
+    </script>
   </head>
 
   <body>
-    <!-- =====================================================
-         page transition + skip link
-         ===================================================== -->
     <div id="page-transition" aria-hidden="true"></div>
     <a class="skip-link" href="#main_container">skip to main content</a>
 
-    <!-- =====================================================
-         header (injected by JS)
-         ===================================================== -->
     <header id="site-header" class="site-header" role="banner"></header>
 
-    <!-- mobile menu -->
-    <div class="mobile-menu" aria-label="mobile navigation">
-    <!-- mobile nav links -->
-    </div>
+    <div class="mobile-menu" aria-label="mobile navigation"></div>
 
-    <!-- =====================================================
-         main
-         ===================================================== -->
-    <main id="main_container" class="container" role="main">
-      <!-- page content -->
+    <main id="main_container" role="main">
+
+      <!-- ================================================================
+           HERO SECTION
+           Primary above-the-fold content featuring:
+           - Brand name (h1) as the main page heading
+           - Tagline establishing location identity
+           - Two primary CTAs: View Menus (primary) and Visit Us (secondary)
+           Uses section-lg for extra vertical padding emphasis
+           ================================================================ -->
+      <section class="hero section-lg">
+        <div class="container text-center">
+          <h1 class="hero-logo">
+            <img src="/images/munikc.webp" alt="MuNi KC" class="hero-logo-img">
+          </h1>
+          <p class="text-xl text-muted mb-lg">River Market's neighborhood bar</p>
+          <div class="flex flex-center gap-md flex-wrap">
+            <a href="/menus.html" class="button button-primary">View Menus</a>
+            <a href="/contact.html" class="button button-secondary">Visit Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           GALLERY CAROUSEL SECTION
+           Photo/video carousel showcasing the space, food, drinks, and vibe.
+           Placeholder images until actual content is provided.
+           ================================================================ -->
+      <section class="section gallery-section">
+        <div class="container">
+          <h2 class="text-2xl text-center mb-lg">The Vibe</h2>
+          <div class="gallery-carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <div class="carousel-placeholder">
+                  <span>Food</span>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="carousel-placeholder">
+                  <span>Drinks</span>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="carousel-placeholder">
+                  <span>Space</span>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="carousel-placeholder">
+                  <span>Atmosphere</span>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="carousel-placeholder">
+                  <span>Community</span>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           ABOUT PREVIEW SECTION
+           Brief mission statement teaser to establish brand values.
+           Links to full About page for users wanting more context.
+           Uses container-sm for comfortable reading width.
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm text-center">
+          <h2 class="text-3xl mb-md">Community First</h2>
+          <p class="text-lg text-muted">
+            MuNi provides a first-rate experience and a safe meeting place for the community to come together.
+            We do this through well thought out drinks and food, creating a space where Kansas City comes alive.
+          </p>
+          <a href="/about.html" class="button button-ghost mt-lg">Learn More</a>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           QUICK INFO GRID
+           Three-card grid highlighting key selling points:
+           1. No Reservations - Emphasizes casual, welcoming atmosphere
+           2. River Market - Establishes prime location in KC
+           3. Events & Gatherings - Highlights community/event capabilities
+           Uses grid-auto-fit for responsive column behavior
+           ================================================================ -->
+      <section class="section">
+        <div class="container">
+          <div class="grid grid-3 grid-auto-fit">
+            <!-- Card: Walk-in Policy -->
+            <div class="card text-center">
+              <h3 class="text-xl mb-sm">No Reservations Needed</h3>
+              <p class="text-muted">Walk in anytime. We've got a seat for you.</p>
+            </div>
+            <!-- Card: Location Highlight -->
+            <div class="card text-center">
+              <h3 class="text-xl mb-sm">River Market</h3>
+              <p class="text-muted">Located in the heart of Kansas City's historic district.</p>
+            </div>
+            <!-- Card: Events Feature -->
+            <div class="card text-center">
+              <h3 class="text-xl mb-sm">Events & Gatherings</h3>
+              <p class="text-muted">From game days to private events, we bring people together.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           SOCIAL / INSTAGRAM PREVIEW SECTION
+           Placeholder for Instagram feed integration.
+           TODO: Integrate Instagram API or embed widget
+           Provides direct link to Instagram profile as fallback
+           id="social" allows direct linking from other pages
+           ================================================================ -->
+      <section class="section" id="social">
+        <div class="container">
+          <h2 class="text-2xl text-center mb-lg">Follow Along</h2>
+          <div class="instagram-carousel">
+            <div class="carousel-track" data-carousel="instagram">
+              <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="carousel-slide instagram-slide">
+                <div class="instagram-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="carousel-slide instagram-slide">
+                <div class="instagram-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="carousel-slide instagram-slide">
+                <div class="instagram-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="carousel-slide instagram-slide">
+                <div class="instagram-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="carousel-slide instagram-slide">
+                <div class="instagram-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="carousel-slide instagram-slide">
+                <div class="instagram-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <button class="carousel-btn carousel-btn-prev" data-carousel="instagram" aria-label="Previous slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" data-carousel="instagram" aria-label="Next slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+          <p class="text-center mt-lg">
+            <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener" class="button button-ghost">@muni.kansascity</a>
+          </p>
+        </div>
+      </section>
+
     </main>
 
-    <!-- =====================================================
-         footer injected by js
-         ===================================================== -->
     <footer id="site-footer" class="footer" role="contentinfo"></footer>
 
-    <!-- =====================================================
-         scripts
-         ===================================================== -->
     <script src="/js/page-transition.js" defer></script>
     <script src="/js/utils.js" defer></script>
     <script src="/js/header.js" defer></script>
     <script src="/js/footer.js" defer></script>
-
   </body>
 </html>

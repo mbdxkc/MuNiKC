@@ -1,0 +1,279 @@
+<!--
+================================================================================
+  MuNi KC - Contact Page (contact.html)
+================================================================================
+
+  @description  Contact and location information for MuNi KC. Includes address,
+                business hours, social links, embedded map, and a contact form
+                for inquiries about private events or general questions.
+
+  @url          https://munikc.com/contact
+
+  @sections     1. Page Header - Title and welcoming message
+                2. Location & Hours (#location) - Address, hours, social links, map
+                3. Contact Form (#inquiries) - Multi-purpose inquiry form
+
+  @anchors      #location, #inquiries - Deep-linkable section anchors
+
+  @dependencies
+    - /style.css           Main stylesheet with design tokens and utilities
+    - /js/page-transition.js   Page transition animations
+    - /js/utils.js         Shared utility functions
+    - /js/header.js        Dynamic header/navigation injection
+    - /js/footer.js        Dynamic footer injection
+
+  @fonts        Nunito Sans (Google Fonts, weights 200-1000)
+
+  @forms        Contact inquiry form with fields:
+                - Name (required)
+                - Email (required)
+                - Subject (select: General/Private Event/Feedback/Other)
+                - Message (required)
+                TODO: Connect form to backend or form service (Formspree, etc.)
+
+  @integrations
+                - Google Maps embed (placeholder)
+                - Instagram profile link
+                - Google Reviews link
+
+  @accessibility
+    - Skip link to main content
+    - Semantic form labels with for/id associations
+    - Address element for location info
+    - ARIA roles on header, main, footer
+    - External links have rel="noopener"
+
+  @author       mediaBrilliance digitalxtudio
+  @project      MuNi KC Website
+  @version      1.0.0
+================================================================================
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contact | MuNi KC</title>
+    <meta name="description" content="Visit MuNi KC in River Market, Kansas City. Find our location, hours, and get in touch for special requests." />
+    <link rel="canonical" href="https://munikc.com/contact" />
+
+    <meta property="og:title" content="Contact | MuNi KC" />
+    <meta property="og:description" content="Visit MuNi KC in River Market." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://munikc.com/contact" />
+    <meta property="og:image" content="/og.png" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="page-transition" aria-hidden="true"></div>
+    <a class="skip-link" href="#main_container">skip to main content</a>
+
+    <header id="site-header" class="site-header" role="banner"></header>
+
+    <div class="mobile-menu" aria-label="mobile navigation"></div>
+
+    <main id="main_container" role="main">
+
+      <!-- ================================================================
+           PAGE HEADER
+           Welcoming intro emphasizing MuNi's casual, walk-in friendly policy.
+           "No reservation needed" reinforces accessibility and openness.
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm text-center">
+          <h1 class="text-4xl mb-md">Contact</h1>
+          <p class="text-lg text-muted">
+            Come visit us. No reservation needed.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           LOCATION & HOURS SECTION (#location)
+           Two-column layout with business info and embedded map.
+           Deep-linkable via #location anchor.
+
+           Left Column Contains:
+           - Location: Physical address with Google Maps link
+           - Hours: Operating hours by day of week
+           - Connect: Social media and review links
+
+           Right Column:
+           - Google Maps embed for easy navigation
+
+           TODO: Replace placeholder address/hours with actual business info
+           TODO: Add Google Maps iframe embed with proper API key
+           ================================================================ -->
+      <section class="section" id="location">
+        <div class="container">
+          <div class="grid grid-2 grid-auto-fit gap-xl">
+
+            <!-- Left Column: Business Information -->
+            <div>
+              <!-- Physical Address using semantic <address> element -->
+              <h2 class="text-2xl mb-md">Location</h2>
+              <address class="mb-lg" style="font-style:normal;">
+                <p class="mb-sm">316 Delaware St</p>
+                <p class="mb-sm">Kansas City, MO 64105</p>
+                <p class="mb-sm text-muted">River Market · On the KC Streetcar line</p>
+                <p>
+                  <a href="https://www.google.com/maps/dir//316+Delaware+St,+Kansas+City,+MO+64105" target="_blank" rel="noopener">Get Directions</a>
+                </p>
+              </address>
+
+              <!-- Operating Hours -->
+              <h2 class="text-2xl mb-md">Hours</h2>
+              <div class="hours mb-lg">
+                <p class="flex justify-between mb-xs">
+                  <span>Monday</span>
+                  <span class="text-muted">Closed</span>
+                </p>
+                <p class="flex justify-between mb-xs">
+                  <span>Tuesday – Thursday</span>
+                  <span class="text-muted">4pm – 1:30am</span>
+                </p>
+                <p class="flex justify-between mb-xs">
+                  <span>Friday</span>
+                  <span class="text-muted">4pm – 1:30am</span>
+                </p>
+                <p class="flex justify-between mb-xs">
+                  <span>Saturday</span>
+                  <span class="text-muted">10am – 1:30am</span>
+                </p>
+                <p class="flex justify-between mb-xs">
+                  <span>Sunday</span>
+                  <span class="text-muted">10am – 1:30am</span>
+                </p>
+                <p class="flex justify-between mt-sm">
+                  <span class="text-sm">Brunch</span>
+                  <span class="text-muted text-sm">Sat & Sun 10am – 2pm</span>
+                </p>
+                <p class="flex justify-between">
+                  <span class="text-sm">Kitchen closes</span>
+                  <span class="text-muted text-sm">Midnight</span>
+                </p>
+              </div>
+
+              <!-- Social Links: Instagram for updates, Google for reviews -->
+              <h2 class="text-2xl mb-md">Connect</h2>
+              <p class="mb-sm">
+                <a href="https://instagram.com/muni.kansascity" target="_blank" rel="noopener">Instagram</a>
+              </p>
+              <p>
+                <a href="https://www.yelp.com/biz/muni-kansas-city" target="_blank" rel="noopener">Yelp Reviews</a>
+              </p>
+            </div>
+
+            <!-- Right Column: Interactive Map -->
+            <div class="map-container" style="min-height:400px;border-radius:var(--radius-lg);overflow:hidden;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.8!2d-94.586!3d39.111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0f05a4b5a5a5b%3A0x1234567890abcdef!2s316%20Delaware%20St%2C%20Kansas%20City%2C%20MO%2064105!5e0!3m2!1sen!2sus!4v1710000000000"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="MuNi KC location map">
+              </iframe>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual divider between location info and contact form -->
+      <hr class="divider container">
+
+      <!-- ================================================================
+           CONTACT FORM SECTION (#inquiries)
+           Multi-purpose inquiry form for various contact needs.
+           Deep-linkable via #inquiries anchor.
+
+           Form Fields:
+           - Name: Text input (required)
+           - Email: Email input with validation (required)
+           - Subject: Dropdown to categorize inquiry type
+           - Message: Textarea for detailed message (required)
+
+           Subject Options:
+           - General Inquiry: Default catch-all
+           - Private Event: For event booking requests
+           - Feedback: Customer feedback/suggestions
+           - Other: Anything not covered above
+
+           TODO: Connect form to backend handler or service like:
+           - Formspree (https://formspree.io)
+           - Netlify Forms
+           - Custom API endpoint
+
+           Includes fallback direct email link for users who prefer email.
+           ================================================================ -->
+      <section class="section" id="inquiries">
+        <div class="container container-sm">
+          <h2 class="text-2xl mb-md text-center">Get In Touch</h2>
+          <p class="text-center text-muted mb-lg">
+            For special requests, private events, or general inquiries.
+          </p>
+
+          <form action="https://formspree.io/f/munihospitality" method="POST" class="contact-form">
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required />
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required />
+            </div>
+
+            <!-- Subject Dropdown -->
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <select id="subject" name="subject" class="form-select">
+                <option value="general">General Inquiry</option>
+                <option value="private-event">Private Event</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message Textarea -->
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+            </div>
+
+            <!-- Submit Button: Full-width for mobile-friendly tap target -->
+            <button type="submit" class="button button-primary button-block">Send Message</button>
+          </form>
+
+          <!-- Direct Email Fallback -->
+          <p class="text-center text-sm text-muted mt-lg">
+            Or email us directly at <a href="mailto:Munihospitality@gmail.com">Munihospitality@gmail.com</a>
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="site-footer" class="footer" role="contentinfo"></footer>
+
+    <script src="/js/page-transition.js" defer></script>
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+  </body>
+</html>

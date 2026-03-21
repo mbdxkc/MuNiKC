@@ -1,31 +1,74 @@
-/* =========================================================
-   utils.js
-   common ui interactions
-   ========================================================= */
+/**
+ * ==========================================================================
+ * MuNi KC - Utilities
+ * ==========================================================================
+ * @file        utils.js
+ * @description Common UI interactions and shared functionality
+ * @author      mediaBrilliance digitalxtudio
+ * @project     MuNi KC Website
+ * @version     1.1.0
+ * @updated     2026-03-21
+ *
+ * @contents
+ *   1. Site Constants - Centralized configuration
+ *   2. Mobile Navigation - Toggle menu, keyboard support
+ *   3. Smooth Scroll - Anchor link handling
+ *   4. Carousels - Gallery and Instagram carousel logic
+ *   5. Initialization - DOMContentLoaded setup
+ * ==========================================================================
+ */
 
 (function () {
   'use strict';
 
-  /* ---------------------------------------------------------
-     mobile navigation toggle
-     --------------------------------------------------------- */
+  /* ==========================================================================
+     1) SITE CONSTANTS
+     Centralized values for easy maintenance
+     ========================================================================== */
+
+  window.MUNI = {
+    contact: {
+      email: 'Munihospitality@gmail.com',
+      address: '316 Delaware St',
+      city: 'Kansas City',
+      state: 'MO',
+      zip: '64105',
+      neighborhood: 'River Market',
+      mapsUrl: 'https://www.google.com/maps/dir//316+Delaware+St,+Kansas+City,+MO+64105'
+    },
+    social: {
+      instagram: 'muni.kansascity',
+      instagramUrl: 'https://instagram.com/muni.kansascity',
+      yelp: 'muni-kansas-city'
+    },
+    hours: {
+      closed: ['Monday'],
+      dinner: { days: 'Tue-Fri', open: '4pm', close: '1:30am' },
+      weekend: { days: 'Sat-Sun', open: '10am', close: '1:30am' },
+      brunch: { days: 'Sat-Sun', open: '10am', close: '2pm' }
+    }
+  };
+
+  /* ==========================================================================
+     2) MOBILE NAVIGATION
+     Handles hamburger menu toggle with keyboard accessibility
+     ========================================================================== */
+
   function initMobileNav() {
     var toggle = document.querySelector('.nav-toggle');
     var menu = document.querySelector('.mobile-menu');
 
     if (!toggle || !menu) return;
 
+    // Toggle menu on button click
     toggle.addEventListener('click', function () {
       var isOpen = menu.classList.contains('is-active');
-
       menu.classList.toggle('is-active');
-      toggle.setAttribute('aria-expanded', !isOpen);
-
-      // prevent body scroll when menu is open
+      toggle.setAttribute('aria-expanded', String(!isOpen));
       document.body.style.overflow = isOpen ? '' : 'hidden';
     });
 
-    // close menu on escape
+    // Close menu on Escape key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('is-active')) {
         menu.classList.remove('is-active');
@@ -34,7 +77,7 @@
       }
     });
 
-    // close menu when clicking a link
+    // Close menu when clicking a navigation link
     menu.addEventListener('click', function (e) {
       if (e.target.matches('a')) {
         menu.classList.remove('is-active');
@@ -44,56 +87,11 @@
     });
   }
 
-  /* ---------------------------------------------------------
-     modal handling
-     --------------------------------------------------------- */
-  function initModals() {
-    document.addEventListener('click', function (e) {
-      // open modal
-      var trigger = e.target.closest('[data-modal-open]');
-      if (trigger) {
-        var modalId = trigger.getAttribute('data-modal-open');
-        var modal = document.getElementById(modalId);
-        var overlay = document.querySelector('.overlay');
+  /* ==========================================================================
+     3) SMOOTH SCROLL
+     Handles anchor link scrolling with header offset
+     ========================================================================== */
 
-        if (modal) {
-          modal.classList.add('is-active');
-          if (overlay) overlay.classList.add('is-active');
-          document.body.style.overflow = 'hidden';
-        }
-        return;
-      }
-
-      // close modal
-      var closer = e.target.closest('[data-modal-close]');
-      if (closer || e.target.matches('.overlay')) {
-        closeAllModals();
-      }
-    });
-
-    // close on escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeAllModals();
-      }
-    });
-  }
-
-  function closeAllModals() {
-    var modals = document.querySelectorAll('.modal.is-active');
-    var overlay = document.querySelector('.overlay.is-active');
-
-    modals.forEach(function (modal) {
-      modal.classList.remove('is-active');
-    });
-
-    if (overlay) overlay.classList.remove('is-active');
-    document.body.style.overflow = '';
-  }
-
-  /* ---------------------------------------------------------
-     smooth scroll for anchor links
-     --------------------------------------------------------- */
   function initSmoothScroll() {
     document.addEventListener('click', function (e) {
       var link = e.target.closest('a[href^="#"]');
@@ -107,6 +105,7 @@
 
       e.preventDefault();
 
+      // Calculate scroll position accounting for fixed header
       var headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
       var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
 
@@ -115,18 +114,94 @@
         behavior: 'smooth'
       });
 
-      // update url without triggering scroll
+      // Update URL without triggering scroll
       history.pushState(null, '', targetId);
     });
   }
 
-  /* ---------------------------------------------------------
-     initialize
-     --------------------------------------------------------- */
+  /* ==========================================================================
+     4) CAROUSELS
+     Handles gallery and Instagram carousels with responsive slide counts
+     ========================================================================== */
+
+  function initCarousels() {
+    // Gallery carousel - 3 slides desktop, 2 tablet, 1 mobile
+    initSingleCarousel('.gallery-carousel', function() {
+      if (window.innerWidth <= 480) return 1;
+      if (window.innerWidth <= 768) return 2;
+      return 3;
+    });
+
+    // Instagram carousel - 6 slides desktop, scaling down for smaller screens
+    initSingleCarousel('.instagram-carousel', function() {
+      if (window.innerWidth <= 480) return 2;
+      if (window.innerWidth <= 768) return 3;
+      if (window.innerWidth <= 1024) return 4;
+      return 6;
+    });
+  }
+
+  /**
+   * Initialize a single carousel instance
+   * @param {string} selector - CSS selector for carousel container
+   * @param {function} getSlidesPerView - Returns number of visible slides based on viewport
+   */
+  function initSingleCarousel(selector, getSlidesPerView) {
+    var carousel = document.querySelector(selector);
+    if (!carousel) return;
+
+    var track = carousel.querySelector('.carousel-track');
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    var prevBtn = carousel.querySelector('.carousel-btn-prev');
+    var nextBtn = carousel.querySelector('.carousel-btn-next');
+
+    if (!track || slides.length === 0) return;
+
+    var currentIndex = 0;
+    var slidesPerView = getSlidesPerView();
+    var gap = 16; // Gap between slides in pixels
+
+    /** Update carousel position based on current index */
+    function updateCarousel() {
+      var slideWidth = slides[0].offsetWidth + gap;
+      track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+    }
+
+    /** Advance to next slide, wrapping to start if at end */
+    function nextSlide() {
+      var maxIndex = Math.max(0, slides.length - slidesPerView);
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      updateCarousel();
+    }
+
+    /** Go to previous slide, wrapping to end if at start */
+    function prevSlide() {
+      var maxIndex = Math.max(0, slides.length - slidesPerView);
+      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      updateCarousel();
+    }
+
+    // Attach button event listeners
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+    // Recalculate on window resize
+    window.addEventListener('resize', function () {
+      slidesPerView = getSlidesPerView();
+      currentIndex = Math.min(currentIndex, Math.max(0, slides.length - slidesPerView));
+      updateCarousel();
+    });
+  }
+
+  /* ==========================================================================
+     5) INITIALIZATION
+     Run setup functions when DOM is ready
+     ========================================================================== */
+
   function init() {
     initMobileNav();
-    initModals();
     initSmoothScroll();
+    initCarousels();
   }
 
   if (document.readyState === 'loading') {

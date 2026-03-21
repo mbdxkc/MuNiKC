@@ -1,0 +1,186 @@
+<!--
+================================================================================
+  MuNi KC - Privacy Policy Page (privacy.html)
+================================================================================
+
+  @description  Privacy policy and data handling disclosures for MuNi KC.
+                Outlines what information is collected, how it's used,
+                cookie practices, and third-party service integrations.
+
+  @url          https://munikc.com/privacy
+
+  @sections     1. Page Header - Title and last updated date
+                2. Information We Collect - Data collection practices
+                3. How We Use Your Information - Data usage purposes
+                4. Cookies - Cookie policy disclosure
+                5. Third-Party Services - External service integrations
+                6. Contact - Privacy inquiry contact info
+
+  @dependencies
+    - /style.css           Main stylesheet with design tokens and utilities
+    - /js/page-transition.js   Page transition animations
+    - /js/utils.js         Shared utility functions
+    - /js/header.js        Dynamic header/navigation injection
+    - /js/footer.js        Dynamic footer injection
+
+  @fonts        Nunito Sans (Google Fonts, weights 200-1000)
+
+  @legal        This is a basic privacy policy template. For legal compliance:
+                - Consult with legal counsel for jurisdiction-specific requirements
+                - Consider CCPA, GDPR requirements if applicable
+                - Update "Last updated" date when policy changes
+
+  @accessibility
+    - Skip link to main content
+    - Semantic heading hierarchy (h1 > h2)
+    - ARIA roles on header, main, footer
+
+  @author       mediaBrilliance digitalxtudio
+  @project      MuNi KC Website
+  @version      1.0.0
+================================================================================
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Privacy Policy | MuNi KC</title>
+    <meta name="description" content="MuNi KC privacy policy and terms." />
+    <link rel="canonical" href="https://munikc.com/privacy" />
+
+    <meta property="og:title" content="Privacy Policy | MuNi KC" />
+    <meta property="og:description" content="MuNi KC privacy policy." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://munikc.com/privacy" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="page-transition" aria-hidden="true"></div>
+    <a class="skip-link" href="#main_container">skip to main content</a>
+
+    <header id="site-header" class="site-header" role="banner"></header>
+
+    <div class="mobile-menu" aria-label="mobile navigation"></div>
+
+    <main id="main_container" role="main">
+
+      <!-- ================================================================
+           PAGE HEADER
+           Privacy policy title with last updated date for transparency.
+           Date should be updated whenever policy content changes.
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm">
+          <h1 class="text-4xl mb-md">Privacy Policy</h1>
+          <p class="text-muted">Last updated: March 2026</p>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           POLICY CONTENT SECTION
+           Privacy policy organized by topic with clear headings.
+           Uses container-sm for optimal reading width on legal text.
+
+           Policy Sections:
+           1. Information We Collect - What data is gathered
+           2. How We Use Your Information - Data usage purposes
+           3. Cookies - Browser cookie practices
+           4. Third-Party Services - External integrations disclosure
+           5. Contact - Privacy inquiry contact information
+
+           NOTE: This is a template policy. Actual legal requirements may vary
+           based on jurisdiction (GDPR, CCPA, etc.). Consult legal counsel.
+           ================================================================ -->
+      <section class="section-sm">
+        <div class="container container-sm">
+
+          <!-- ============================================================
+               INFORMATION COLLECTION
+               Discloses what personal data is collected via forms:
+               - Contact form: Name, email, message
+               - Application form: Name, email, phone, experience
+               Purpose limitation: Data used only for intended purpose
+               ============================================================ -->
+          <h2 class="text-xl mb-md">Information We Collect</h2>
+          <p class="mb-lg">
+            When you contact us through our website, we collect the information you provide,
+            such as your name, email address, and message content. We use this information
+            solely to respond to your inquiry.
+          </p>
+
+          <!-- ============================================================
+               DATA USAGE
+               Explains how collected information is used:
+               - Responding to inquiries
+               - Processing job applications
+               - Service improvement
+               Key assurance: No selling/sharing for marketing
+               ============================================================ -->
+          <h2 class="text-xl mb-md">How We Use Your Information</h2>
+          <p class="mb-lg">
+            We use the information you provide to respond to inquiries, process job applications,
+            and improve our services. We do not sell or share your personal information with
+            third parties for marketing purposes.
+          </p>
+
+          <!-- ============================================================
+               COOKIE POLICY
+               Basic cookie disclosure:
+               - Cookies may be used for UX and analytics
+               - User can disable in browser settings
+               TODO: If using analytics (GA4), add specific cookie details
+               ============================================================ -->
+          <h2 class="text-xl mb-md">Cookies</h2>
+          <p class="mb-lg">
+            Our website may use cookies to improve your browsing experience and analyze site traffic.
+            You can disable cookies in your browser settings if you prefer.
+          </p>
+
+          <!-- ============================================================
+               THIRD-PARTY SERVICES
+               Lists external services that have their own privacy policies:
+               - Google Maps (location/directions)
+               - Instagram (social feed)
+               Users encouraged to review those policies separately
+               ============================================================ -->
+          <h2 class="text-xl mb-md">Third-Party Services</h2>
+          <p class="mb-lg">
+            Our website may contain links to third-party services such as Google Maps and Instagram.
+            These services have their own privacy policies, and we encourage you to review them.
+          </p>
+
+          <!-- ============================================================
+               CONTACT FOR PRIVACY INQUIRIES
+               Provides contact method for privacy-related questions.
+               Uses same general email for simplicity.
+               ============================================================ -->
+          <h2 class="text-xl mb-md">Contact</h2>
+          <p>
+            If you have questions about this privacy policy, please contact us at
+            <a href="mailto:Munihospitality@gmail.com">Munihospitality@gmail.com</a>.
+          </p>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="site-footer" class="footer" role="contentinfo"></footer>
+
+    <script src="/js/page-transition.js" defer></script>
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+  </body>
+</html>

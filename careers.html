@@ -1,0 +1,268 @@
+<!--
+================================================================================
+  MuNi KC - Careers Page (careers.html)
+================================================================================
+
+  @description  Job opportunities and application page for MuNi KC. Features
+                information about working at MuNi, current open positions,
+                and an application form for prospective team members.
+
+  @url          https://munikc.com/careers
+
+  @sections     1. Page Header - Title and welcoming intro
+                2. Why MuNi - Value proposition for potential employees
+                3. Open Positions - Current job listings
+                4. Application Form - Job application submission
+
+  @dependencies
+    - /style.css           Main stylesheet with design tokens and utilities
+    - /js/page-transition.js   Page transition animations
+    - /js/utils.js         Shared utility functions
+    - /js/header.js        Dynamic header/navigation injection
+    - /js/footer.js        Dynamic footer injection
+
+  @fonts        Nunito Sans (Google Fonts, weights 200-1000)
+
+  @forms        Job application form with fields:
+                - Name (required)
+                - Email (required)
+                - Phone (optional)
+                - Position (select: Bartender/Server/Back of House/Other)
+                - Experience/About (textarea)
+                TODO: Connect form to backend, consider file upload for resume
+
+  @positions    Current listings (placeholder):
+                - Bartender (Full-time / Part-time)
+                - Server (Full-time / Part-time)
+                - Back of House (Full-time / Part-time)
+
+  @accessibility
+    - Skip link to main content
+    - Semantic article elements for job listings
+    - Form labels with proper for/id associations
+    - ARIA roles on header, main, footer
+
+  @author       mediaBrilliance digitalxtudio
+  @project      MuNi KC Website
+  @version      1.0.0
+================================================================================
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Careers | MuNi KC</title>
+    <meta name="description" content="Join the MuNi KC team. View open positions and apply to work at River Market's neighborhood bar." />
+    <link rel="canonical" href="https://munikc.com/careers" />
+
+    <meta property="og:title" content="Careers | MuNi KC" />
+    <meta property="og:description" content="Join the MuNi KC team." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://munikc.com/careers" />
+    <meta property="og:image" content="/og.png" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="page-transition" aria-hidden="true"></div>
+    <a class="skip-link" href="#main_container">skip to main content</a>
+
+    <header id="site-header" class="site-header" role="banner"></header>
+
+    <div class="mobile-menu" aria-label="mobile navigation"></div>
+
+    <main id="main_container" role="main">
+
+      <!-- ================================================================
+           PAGE HEADER
+           Welcoming intro for job seekers.
+           "Join the MuNi team" emphasizes collaborative, team-oriented culture.
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm text-center">
+          <h1 class="text-4xl mb-md">Careers</h1>
+          <p class="text-lg text-muted">
+            Join the MuNi team.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           WHY MUNI SECTION
+           Employee value proposition highlighting:
+           - Building something new and special
+           - Emphasis on hospitality, community, experience
+           - Passion as a key value
+
+           This section helps attract candidates who align with brand values.
+           Uses section-sm for tighter spacing as intro content.
+           ================================================================ -->
+      <section class="section-sm">
+        <div class="container container-sm">
+          <h2 class="text-2xl mb-md">Why MuNi?</h2>
+          <p>
+            We're building something special in River Market. If you're passionate about hospitality,
+            community, and creating great experiences, we'd love to hear from you.
+          </p>
+        </div>
+      </section>
+
+      <!-- Visual divider between intro and job listings -->
+      <hr class="divider container">
+
+      <!-- ================================================================
+           OPEN POSITIONS SECTION
+           Current job listings displayed as cards.
+           Uses semantic <article> elements for each position.
+
+           Each Position Card Contains:
+           - Job Title (h3)
+           - Employment Type (Full-time / Part-time)
+           - Brief Description of role and requirements
+
+           Current Positions:
+           1. Bartender - Craft cocktails, guest experience
+           2. Server - Front-of-house, guest service
+           3. Back of House - Kitchen roles, food preparation
+
+           TODO: Update positions as hiring needs change
+           Consider adding "Apply to this position" buttons per listing
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm">
+          <h2 class="text-2xl mb-lg">Open Positions</h2>
+
+          <div class="positions">
+            <!-- Position: Bartender -->
+            <article class="card mb-md">
+              <h3 class="text-lg mb-xs">Bartender</h3>
+              <p class="text-sm text-muted mb-md">Full-time / Part-time</p>
+              <p class="text-sm">
+                We're looking for experienced bartenders who can craft thoughtful cocktails
+                and create welcoming experiences for our guests.
+              </p>
+            </article>
+
+            <!-- Position: Server -->
+            <article class="card mb-md">
+              <h3 class="text-lg mb-xs">Server</h3>
+              <p class="text-sm text-muted mb-md">Full-time / Part-time</p>
+              <p class="text-sm">
+                Join our front-of-house team and help deliver the MuNi experience
+                to every guest who walks through our doors.
+              </p>
+            </article>
+
+            <!-- Position: Back of House -->
+            <article class="card mb-md">
+              <h3 class="text-lg mb-xs">Back of House</h3>
+              <p class="text-sm text-muted mb-md">Full-time / Part-time</p>
+              <p class="text-sm">
+                Kitchen positions available for those who take pride in
+                preparing quality food.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual divider between listings and application form -->
+      <hr class="divider container">
+
+      <!-- ================================================================
+           APPLICATION FORM SECTION
+           Job application submission form.
+
+           Form Fields:
+           - Name: Full name (required)
+           - Email: Contact email (required)
+           - Phone: Contact phone (optional, for scheduling)
+           - Position: Dropdown matching available positions
+           - Experience: Open textarea for cover letter content
+
+           Position Options Match Listed Positions:
+           - Bartender
+           - Server
+           - Back of House (boh)
+           - Other (for unlisted positions)
+
+           TODO: Connect form to backend or service for processing
+           Consider adding:
+           - Resume file upload field
+           - Availability/scheduling preferences
+           - Start date availability
+           - Previous experience validation
+
+           Includes fallback direct email for traditional applications.
+           ================================================================ -->
+      <section class="section">
+        <div class="container container-sm">
+          <h2 class="text-2xl mb-md text-center">Apply</h2>
+
+          <form action="https://formspree.io/f/munihospitality" method="POST" class="application-form">
+            <!-- Applicant Name -->
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required />
+            </div>
+
+            <!-- Applicant Email -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required />
+            </div>
+
+            <!-- Applicant Phone (optional) -->
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-input" />
+            </div>
+
+            <!-- Position Selection -->
+            <div class="form-group">
+              <label for="position" class="form-label">Position</label>
+              <select id="position" name="position" class="form-select">
+                <option value="bartender">Bartender</option>
+                <option value="server">Server</option>
+                <option value="boh">Back of House</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Experience/Cover Letter Textarea -->
+            <div class="form-group">
+              <label for="experience" class="form-label">Tell us about yourself</label>
+              <textarea id="experience" name="experience" class="form-textarea" rows="5" placeholder="Experience, availability, why you want to work at MuNi..."></textarea>
+            </div>
+
+            <!-- Submit Button: Full-width for mobile tap target -->
+            <button type="submit" class="button button-primary button-block">Submit Application</button>
+          </form>
+
+          <!-- Direct Email Fallback for Resume Submissions -->
+          <p class="text-center text-sm text-muted mt-lg">
+            Or email your resume to <a href="mailto:Munihospitality@gmail.com">Munihospitality@gmail.com</a>
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="site-footer" class="footer" role="contentinfo"></footer>
+
+    <script src="/js/page-transition.js" defer></script>
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+  </body>
+</html>
