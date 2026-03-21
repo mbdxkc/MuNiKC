@@ -232,7 +232,7 @@ a{
 
 a:hover{
   color: var(--accent-highlight);
-  text-shadow: 0 0 12px rgba(139,26,45,0.5), 0 0 24px rgba(139,26,45,0.25);
+  text-shadow: 0 0 8px rgba(196,30,58,0.8), 0 0 20px rgba(196,30,58,0.5), 0 0 40px rgba(196,30,58,0.3);
 }
 
 
@@ -302,7 +302,7 @@ a:hover{
 
 .nav .header-title a:hover{
   color: var(--accent-highlight);
-  text-shadow: 0 0 12px rgba(139,26,45,0.5), 0 0 24px rgba(139,26,45,0.25);
+  text-shadow: 0 0 8px rgba(196,30,58,0.8), 0 0 20px rgba(196,30,58,0.5), 0 0 40px rgba(196,30,58,0.3);
 }
 
 .nav .socials{
@@ -318,7 +318,7 @@ a:hover{
 
 .nav-link:hover{
   color: var(--text);
-  text-shadow: 0 0 12px rgba(139,26,45,0.5), 0 0 24px rgba(139,26,45,0.25);
+  text-shadow: 0 0 8px rgba(196,30,58,0.8), 0 0 20px rgba(196,30,58,0.5), 0 0 40px rgba(196,30,58,0.3);
 }
 
 .nav-link.is-active{
@@ -505,7 +505,7 @@ img{
 
 .footer-left a:hover{
   color: var(--text);
-  text-shadow: 0 0 12px rgba(139,26,45,0.5), 0 0 24px rgba(139,26,45,0.25);
+  text-shadow: 0 0 8px rgba(196,30,58,0.8), 0 0 20px rgba(196,30,58,0.5), 0 0 40px rgba(196,30,58,0.3);
 }
 
 .footer-center{
@@ -520,7 +520,7 @@ img{
 
 .footer-center a:hover{
   color: var(--text);
-  text-shadow: 0 0 12px rgba(139,26,45,0.5), 0 0 24px rgba(139,26,45,0.25);
+  text-shadow: 0 0 8px rgba(196,30,58,0.8), 0 0 20px rgba(196,30,58,0.5), 0 0 40px rgba(196,30,58,0.3);
 }
 
 .footer-right{
@@ -537,7 +537,7 @@ img{
 
 .footer-right a:hover{
   color: var(--text);
-  text-shadow: 0 0 12px rgba(139,26,45,0.5), 0 0 24px rgba(139,26,45,0.25);
+  text-shadow: 0 0 8px rgba(196,30,58,0.8), 0 0 20px rgba(196,30,58,0.5), 0 0 40px rgba(196,30,58,0.3);
 }
 
 .footer-copy{
