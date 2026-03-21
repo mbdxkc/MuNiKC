@@ -14,7 +14,8 @@
  *   2. Mobile Navigation - Toggle menu, keyboard support
  *   3. Smooth Scroll - Anchor link handling
  *   4. Carousels - Gallery and Instagram carousel logic
- *   5. Initialization - DOMContentLoaded setup
+ *   5. Back to Top - Show/hide scroll button
+ *   6. Initialization - DOMContentLoaded setup
  * ==========================================================================
  */
 
@@ -194,7 +195,42 @@
   }
 
   /* ==========================================================================
-     5) INITIALIZATION
+     5) BACK TO TOP BUTTON
+     Show/hide button based on scroll position
+     ========================================================================== */
+
+  function initBackToTop() {
+    var btn = document.querySelector('.back-to-top');
+    if (!btn) return;
+
+    var scrollThreshold = 300;
+
+    function toggleVisibility() {
+      if (window.scrollY > scrollThreshold) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+    }
+
+    // Check on scroll with throttle
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          toggleVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Initial check
+    toggleVisibility();
+  }
+
+  /* ==========================================================================
+     6) INITIALIZATION
      Run setup functions when DOM is ready
      ========================================================================== */
 
@@ -202,6 +238,7 @@
     initMobileNav();
     initSmoothScroll();
     initCarousels();
+    initBackToTop();
   }
 
   if (document.readyState === 'loading') {
