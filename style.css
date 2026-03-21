@@ -657,18 +657,6 @@ img{
   padding: 0 1rem;
 }
 
-.container-lg{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.container-full{
-  width: 100%;
-  padding: 0 1rem;
-}
-
-
 /* =========================================================
    12) card component
    ========================================================= */
@@ -684,27 +672,6 @@ img{
 
 .card:hover{
   border-color: rgba(255,255,255,.2);
-}
-
-.card-interactive:hover{
-  transform: translateY(-2px);
-  border-color: var(--accent-primary);
-}
-
-.card-header{
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-}
-
-.card-body{
-  flex: 1;
-}
-
-.card-footer{
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,.1);
 }
 
 
@@ -769,67 +736,6 @@ img{
   padding-right: 2.5rem;
 }
 
-/* checkbox + radio */
-.form-check{
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  cursor: pointer;
-}
-
-.form-check-input{
-  appearance: none;
-  width: 1.25rem;
-  height: 1.25rem;
-
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.3);
-  border-radius: 4px;
-
-  cursor: pointer;
-  transition:
-    background var(--t-fast) ease,
-    border-color var(--t-fast) ease;
-}
-
-.form-check-input[type="radio"]{
-  border-radius: 50%;
-}
-
-.form-check-input:checked{
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-}
-
-.form-check-input:focus-visible{
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0,141,218,.25);
-}
-
-/* validation states */
-.form-input.is-valid,
-.form-textarea.is-valid{
-  border-color: #22c55e;
-}
-
-.form-input.is-invalid,
-.form-textarea.is-invalid{
-  border-color: #ef4444;
-}
-
-.form-hint{
-  margin-top: .375rem;
-  font-size: .8125rem;
-  color: var(--muted);
-}
-
-.form-error{
-  margin-top: .375rem;
-  font-size: .8125rem;
-  color: #ef4444;
-}
-
-
 /* =========================================================
    14) button variants
    ========================================================= */
@@ -864,16 +770,6 @@ img{
   border-color: transparent;
 }
 
-.button-sm{
-  padding: .5rem 1rem;
-  font-size: .875rem;
-}
-
-.button-lg{
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-}
-
 .button-block{
   display: flex;
   width: 100%;
@@ -881,31 +777,7 @@ img{
 
 
 /* =========================================================
-   15) badge / tag
-   ========================================================= */
-.badge{
-  display: inline-flex;
-  align-items: center;
-  padding: .25rem .625rem;
-  font-size: .75rem;
-  font-weight: 600;
-  border-radius: 999px;
-  background: rgba(255,255,255,.1);
-  color: var(--text);
-}
-
-.badge-primary{
-  background: var(--accent-primary);
-}
-
-.badge-secondary{
-  background: var(--accent-secondary);
-  color: #000;
-}
-
-
-/* =========================================================
-   16) divider
+   15) divider
    ========================================================= */
 .divider{
   height: 1px;
@@ -914,13 +786,9 @@ img{
   border: none;
 }
 
-.divider-lg{
-  margin: 4rem 0;
-}
-
 
 /* =========================================================
-   17) spacing utilities
+   16) spacing utilities
    ========================================================= */
 /* margin */
 .m-0{ margin: 0; }
