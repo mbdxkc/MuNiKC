@@ -10,19 +10,10 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------------------------------------------------
-     initial page load
+     initial page load - no blocking overlay
      --------------------------------------------------------- */
   function init() {
-    document.body.classList.add('is-loading');
-
-    window.addEventListener('load', function () {
-      requestAnimationFrame(function () {
-        document.body.classList.remove('is-loading');
-        if (transition) {
-          transition.classList.add('exit');
-        }
-      });
-    });
+    // Content visible by default, no blocking
   }
 
   /* ---------------------------------------------------------
@@ -58,7 +49,7 @@
     document.body.classList.add('is-leaving');
 
     if (transition) {
-      transition.classList.remove('exit');
+      transition.classList.add('active');
     }
 
     var duration = parseFloat(
@@ -75,9 +66,8 @@
      --------------------------------------------------------- */
   function handlePopState() {
     window.addEventListener('popstate', function () {
-      document.body.classList.add('is-loading');
       if (transition) {
-        transition.classList.remove('exit');
+        transition.classList.add('active');
       }
     });
   }

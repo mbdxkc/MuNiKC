@@ -152,12 +152,12 @@ body{
   background: var(--bg);
   pointer-events: none;
 
-  transform: translateX(0);
+  transform: translateX(-100%);
   transition: transform var(--t-slow) var(--ease);
 }
 
-#page-transition.exit{
-  transform: translateX(-100%);
+#page-transition.active{
+  transform: translateX(0);
 }
 
 main{
@@ -166,7 +166,6 @@ main{
   transition: opacity var(--t-base) ease;
 }
 
-body.is-loading main,
 body.is-leaving main{
   opacity: 0;
 }
