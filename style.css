@@ -91,6 +91,7 @@ html,body{
 html{
   overflow-x: hidden;
   scrollbar-gutter: stable both-edges;
+  background: #000000;
 }
 
 body{
