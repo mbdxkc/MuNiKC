@@ -95,10 +95,10 @@
      ========================================================================== */
 
   const mobileMenuHTML = `
+    <a href="./" class="nav-link">Home</a>
     ${navLinks.map(link =>
       `<a href="${link.href}" class="nav-link">${link.label}</a>`
     ).join('')}
-    <hr class="divider">
     <a href="./careers.html" class="nav-link">Careers</a>
   `;
 
