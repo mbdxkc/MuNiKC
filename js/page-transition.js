@@ -13,13 +13,15 @@
      initial page load - fade in content
      --------------------------------------------------------- */
   function init() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {
+      document.documentElement.classList.remove('is-entering');
+      return;
+    }
 
-    // Start hidden, then fade in after brief delay
-    document.body.classList.add('is-entering');
-
+    // Class already added by inline script in <head>
+    // Remove after brief delay to trigger fade-in
     setTimeout(function() {
-      document.body.classList.remove('is-entering');
+      document.documentElement.classList.remove('is-entering');
     }, 50);
   }
 
@@ -53,7 +55,7 @@
       return;
     }
 
-    document.body.classList.add('is-leaving');
+    document.documentElement.classList.add('is-leaving');
 
     if (transition) {
       transition.classList.add('active');
