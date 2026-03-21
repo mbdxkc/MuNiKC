@@ -1,56 +1,10 @@
-<!--
-================================================================================
-  MuNi KC - Careers Page (careers.html)
-================================================================================
-
-  @description  Job opportunities and application page for MuNi KC. Features
-                information about working at MuNi, current open positions,
-                and an application form for prospective team members.
-
-  @url          https://munikc.com/careers
-
-  @sections     1. Page Header - Title and welcoming intro
-                2. Why MuNi - Value proposition for potential employees
-                3. Open Positions - Current job listings
-                4. Application Form - Job application submission
-
-  @dependencies
-    - /style.css           Main stylesheet with design tokens and utilities
-    - /js/page-transition.js   Page transition animations
-    - /js/utils.js         Shared utility functions
-    - /js/header.js        Dynamic header/navigation injection
-    - /js/footer.js        Dynamic footer injection
-
-  @fonts        Nunito Sans (Google Fonts, weights 200-1000)
-
-  @forms        Job application form with fields:
-                - Name (required)
-                - Email (required)
-                - Phone (optional)
-                - Position (select: Bartender/Server/Back of House/Other)
-                - Experience/About (textarea)
-                TODO: Connect form to backend, consider file upload for resume
-
-  @positions    Current listings (placeholder):
-                - Bartender (Full-time / Part-time)
-                - Server (Full-time / Part-time)
-                - Back of House (Full-time / Part-time)
-
-  @accessibility
-    - Skip link to main content
-    - Semantic article elements for job listings
-    - Form labels with proper for/id associations
-    - ARIA roles on header, main, footer
-
-  @author       mediaBrilliance digitalxtudio
-  @project      MuNi KC Website
-  @version      1.0.0
-================================================================================
--->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!--
+    MuNi KC - Careers Page  | mediaBrilliance digitalxtudio
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Careers | MuNi KC</title>
@@ -75,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.min.css" />
   </head>
 
   <body>
@@ -265,9 +219,9 @@
 
     <footer id="site-footer" class="footer" role="contentinfo"></footer>
 
-    <script src="./js/page-transition.js" defer></script>
-    <script src="./js/utils.js" defer></script>
-    <script src="./js/header.js" defer></script>
-    <script src="./js/footer.js" defer></script>
+    <script src="./js/page-transition.min.js" defer></script>
+    <script src="./js/utils.min.js" defer></script>
+    <script src="./js/header.min.js" defer></script>
+    <script src="./js/footer.min.js" defer></script>
   </body>
 </html>
