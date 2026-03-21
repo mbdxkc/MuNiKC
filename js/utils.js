@@ -213,6 +213,12 @@
       }
     }
 
+    // Scroll to top on click
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     // Check on scroll with throttle
     var ticking = false;
     window.addEventListener('scroll', function() {
