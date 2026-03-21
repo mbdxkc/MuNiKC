@@ -142,14 +142,24 @@ body{
 
 
 /* =========================================================
-   4) page transition (optional)
+   4) PAGE TRANSITIONS
+   Smooth fade with warm crimson glow between pages.
+
+   Mechanism:
+   - Entry: .is-entering on <html> (set by inline script in <head>)
+            Content starts hidden, fades in when class removed
+   - Exit:  .is-leaving on <html> (set by page-transition.js)
+            Content fades out, overlay appears, then navigate
+
+   Easing: cubic-bezier(0.4, 0, 0.2, 1) for smooth acceleration
    ========================================================= */
+
+/* Warm overlay - hidden by default, fades in on exit */
 #page-transition{
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-
   background: radial-gradient(ellipse at center, rgba(139,26,45,0.15) 0%, var(--bg) 70%);
   opacity: 0;
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -159,6 +169,7 @@ body{
   opacity: 1;
 }
 
+/* Main content - smooth transform for enter/exit */
 main{
   flex: 1 0 auto;
   opacity: 1;
@@ -166,21 +177,25 @@ main{
   transition: opacity 0.5s ease-in-out, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Entry: start slightly zoomed, fade in while scaling down */
 html.is-entering main{
   opacity: 0;
   transform: scale(1.02);
 }
 
+/* Exit: fade out while scaling down slightly (receding) */
 html.is-leaving main{
   opacity: 0;
   transform: scale(0.98);
 }
 
+/* Lock scroll during transitions */
 html.is-entering,
 html.is-leaving{
   overflow: hidden;
 }
 
+/* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce){
   #page-transition,
   main{
