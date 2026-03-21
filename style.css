@@ -297,7 +297,7 @@ a:hover{
   font-size: 1.25rem;
   letter-spacing: .02em;
   color: var(--text);
-  transition: color var(--t-fast) ease;
+  transition: color var(--t-fast) ease, text-shadow var(--t-fast) ease;
 }
 
 .nav .header-title a:hover{
