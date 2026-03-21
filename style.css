@@ -1248,6 +1248,10 @@ img{
    27) back to top button
    ========================================================= */
 .back-to-top{
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -1261,9 +1265,7 @@ img{
   background: rgba(0,0,0,.7);
   border: 1px solid rgba(255,255,255,.15);
   border-radius: 50%;
-
   color: var(--muted);
-  text-decoration: none;
 
   opacity: 0;
   visibility: hidden;
@@ -1275,7 +1277,6 @@ img{
     transform var(--t-base) ease,
     color var(--t-fast) ease,
     border-color var(--t-fast) ease,
-    text-shadow var(--t-fast) ease,
     filter var(--t-fast) ease;
 
   z-index: 100;

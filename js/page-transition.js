@@ -70,9 +70,9 @@
       if (link.hasAttribute('download')) return;
       if (link.getAttribute('target') === '_blank') return;
 
-      // Ignore same-page anchor links (including href="#")
+      // Ignore anchor links (same-page navigation)
       var linkHref = link.getAttribute('href');
-      if (linkHref === '#' || linkHref.startsWith('#')) return;
+      if (linkHref && linkHref.startsWith('#')) return;
 
       // Ignore modifier key combos (open in new tab, etc.)
       if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
