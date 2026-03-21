@@ -101,10 +101,7 @@ body{
   display: flex;
   flex-direction: column;
 
-  background:
-    radial-gradient(ellipse at 50% 0%, #1a1a1a 0%, #0a0a0a 50%, #000000 100%);
-  background-color: var(--bg);
-  background-attachment: fixed;
+  background: var(--bg);
   color: var(--text);
 
   font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
