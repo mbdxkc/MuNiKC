@@ -148,26 +148,31 @@ body{
   position: fixed;
   inset: 0;
   z-index: 9999;
-
-  background: var(--bg);
   pointer-events: none;
 
-  transform: translateX(-100%);
-  transition: transform var(--t-slow) var(--ease);
+  background: radial-gradient(ellipse at center, rgba(139,26,45,0.15) 0%, var(--bg) 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 #page-transition.active{
-  transform: translateX(0);
+  opacity: 1;
 }
 
 main{
   flex: 1 0 auto;
   opacity: 1;
-  transition: opacity var(--t-base) ease;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.5s ease;
 }
 
 body.is-leaving main{
   opacity: 0;
+  transform: scale(0.98);
+}
+
+body.is-leaving{
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce){
