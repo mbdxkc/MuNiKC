@@ -10,10 +10,17 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------------------------------------------------
-     initial page load - no blocking overlay
+     initial page load - fade in content
      --------------------------------------------------------- */
   function init() {
-    // Content visible by default, no blocking
+    if (prefersReducedMotion) return;
+
+    // Start hidden, then fade in after brief delay
+    document.body.classList.add('is-entering');
+
+    setTimeout(function() {
+      document.body.classList.remove('is-entering');
+    }, 50);
   }
 
   /* ---------------------------------------------------------
