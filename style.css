@@ -652,6 +652,20 @@ img{
   display: block;
 }
 
+/* Now Serving status indicator */
+#now-serving{
+  font-family: 'Kalam', cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  text-shadow: 0 0 12px rgba(250,249,246,.6), 0 0 24px rgba(250,249,246,.4);
+  letter-spacing: 0.02em;
+}
+
+#now-serving .serving-type{
+  color: var(--accent-primary);
+}
+
 .container-sm{
   max-width: 720px;
   margin: 0 auto;

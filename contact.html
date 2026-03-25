@@ -64,14 +64,14 @@
 
            Left Column Contains:
            - Location: Physical address with Google Maps link
-           - Hours: Operating hours by day of week
+           - Hours: Service-based hours (Brunch, Dinner, Bar)
+             Brunch: Sat & Sun 10am-2pm
+             Dinner: Tue-Sun 4pm-midnight
+             Bar: Tue-Fri 4pm-1:30am, Sat & Sun 10am-1:30am
            - Connect: Social media and review links
 
            Right Column:
            - Google Maps embed for easy navigation
-
-           TODO: Replace placeholder address/hours with actual business info
-           TODO: Add Google Maps iframe embed with proper API key
            ================================================================ -->
       <section class="section" id="location">
         <div class="container">
@@ -94,32 +94,16 @@
               <h2 class="text-2xl mb-md">Hours</h2>
               <div class="hours mb-lg">
                 <p class="flex justify-between mb-xs">
-                  <span>Monday</span>
-                  <span class="text-muted">Closed</span>
+                  <span>Brunch</span>
+                  <span class="text-muted">Sat & Sun 10am – 2pm</span>
                 </p>
                 <p class="flex justify-between mb-xs">
-                  <span>Tuesday – Thursday</span>
-                  <span class="text-muted">4pm – 1:30am</span>
-                </p>
-                <p class="flex justify-between mb-xs">
-                  <span>Friday</span>
-                  <span class="text-muted">4pm – 1:30am</span>
-                </p>
-                <p class="flex justify-between mb-xs">
-                  <span>Saturday</span>
-                  <span class="text-muted">10am – 1:30am</span>
-                </p>
-                <p class="flex justify-between mb-xs">
-                  <span>Sunday</span>
-                  <span class="text-muted">10am – 1:30am</span>
-                </p>
-                <p class="flex justify-between mt-sm">
-                  <span class="text-sm">Brunch</span>
-                  <span class="text-muted text-sm">Sat & Sun 10am – 2pm</span>
+                  <span>Dinner</span>
+                  <span class="text-muted">Tue – Sun 4pm – midnight</span>
                 </p>
                 <p class="flex justify-between">
-                  <span class="text-sm">Kitchen closes</span>
-                  <span class="text-muted text-sm">Midnight</span>
+                  <span>Bar</span>
+                  <span class="text-muted">Tue – Fri 4pm – 1:30am, Sat & Sun 10am – 1:30am</span>
                 </p>
               </div>
 

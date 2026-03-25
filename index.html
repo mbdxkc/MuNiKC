@@ -96,6 +96,8 @@
            - Brand name (h1) as the main page heading
            - Tagline establishing location identity
            - Two primary CTAs: View Menus (primary) and Visit Us (secondary)
+           - Dynamic "Now Serving" status (brunch/dinner/drinks/closed)
+             Updates based on current day/time via now-serving.min.js
            Uses section-lg for extra vertical padding emphasis
            ================================================================ -->
       <section class="hero section-lg">
@@ -108,6 +110,7 @@
             <a href="./menus.html" class="button button-primary">View Menus</a>
             <a href="./contact.html" class="button button-secondary">Visit Us</a>
           </div>
+          <p id="now-serving" class="mt-md" aria-live="polite"></p>
         </div>
       </section>
 
@@ -288,5 +291,6 @@
     <script src="./js/utils.min.js" defer></script>
     <script src="./js/header.min.js" defer></script>
     <script src="./js/footer.min.js" defer></script>
+    <script src="./js/now-serving.min.js" defer></script>
   </body>
 </html>
