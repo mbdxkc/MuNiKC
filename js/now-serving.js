@@ -31,13 +31,13 @@
       }
       // After 1:30am or carryover from closed day
       if (day === 1) {
-        return 'Now closed, see you Tuesday';
+        return 'Now closed, see you tomorrow';
       }
     }
 
     // Monday (day 1) - always closed
     if (day === 1) {
-      return 'Now closed, see you Tuesday';
+      return 'Now closed, see you tomorrow';
     }
 
     // Saturday (6) or Sunday (0)
@@ -76,7 +76,7 @@
     if (day === 0) {
       return 'Now closed, see you Tuesday';
     }
-    return 'Now closed, see you Tuesday';
+    return 'Now closed, see you tomorrow';
   }
 
   /**
