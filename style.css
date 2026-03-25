@@ -666,6 +666,16 @@ img{
   color: var(--accent-primary);
 }
 
+#now-serving .serving-next{
+  display: block;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-shadow: none;
+  margin-top: 0.25rem;
+}
+
 .container-sm{
   max-width: 720px;
   margin: 0 auto;

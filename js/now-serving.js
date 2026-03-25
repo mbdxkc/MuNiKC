@@ -1,101 +1,117 @@
 /**
  * Now Serving Status
- * Displays current service status based on time of day
+ * Real-time service indicator for MuNi KC homepage
+ *
+ * @file        now-serving.js
+ * @description Displays current service and upcoming service based on day/time
+ * @author      mediaBrilliance digitalxtudio
+ * @project     MuNi KC Website
  *
  * Hours (Central Time):
- * - Monday: Closed
- * - Tuesday-Friday: 4pm-1:30am (Kitchen until midnight)
- * - Saturday-Sunday: 10am-1:30am (Brunch 10am-2pm, Kitchen until midnight)
+ *   Monday:    Closed
+ *   Tue-Fri:   4pm-1:30am (Dinner 4pm-midnight, Bar midnight-1:30am)
+ *   Sat-Sun:   10am-1:30am (Brunch 10am-2pm, Bar 2-4pm, Dinner 4pm-midnight, Bar midnight-1:30am)
+ *
+ * Output Format:
+ *   "Now serving [current]" + "[next] at [time]"
+ *   "Now closed" + "[next] at [time]"
  */
 (function() {
   'use strict';
 
+  // Day constants for readability
+  var SUN = 0, MON = 1, TUE = 2, SAT = 6;
+
   /**
-   * Get current serving status based on day and time
-   * @returns {string} Status message
+   * Format "Now serving" output with current and next service
+   * @param {string} current - Current service (brunch/dinner/bar only)
+   * @param {string} next - Next service with time
+   * @returns {string} HTML string
    */
-  function getServingStatus() {
-    const now = new Date();
-    const day = now.getDay(); // 0=Sun, 1=Mon, 2=Tue, etc.
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const time = hour + minute / 60; // Decimal time for easier comparison
-
-    // After midnight (12am-1:30am) - drinks only if previous day was open
-    // Must check first before day-specific logic
-    if (time < 1.5) {
-      const yesterday = day === 0 ? 6 : day - 1;
-      // Yesterday wasn't Monday (closed) and wasn't Tuesday (since Monday closed, no carryover)
-      if (yesterday !== 1 && day !== 2) {
-        return 'Now serving <span class="serving-type">drinks</span>';
-      }
-      // After 1:30am or carryover from closed day
-      if (day === 1) {
-        return 'Now closed, see you tomorrow';
-      }
-    }
-
-    // Monday (day 1) - always closed
-    if (day === 1) {
-      return 'Now closed, see you tomorrow';
-    }
-
-    // Saturday (6) or Sunday (0)
-    if (day === 0 || day === 6) {
-      // Before 10am - closed
-      if (time < 10) {
-        return 'Now closed, see you at 10am';
-      }
-      // 10am-2pm - brunch
-      if (time < 14) {
-        return 'Now serving <span class="serving-type">brunch</span>';
-      }
-      // 2pm-4pm - drinks only (kitchen closed)
-      if (time < 16) {
-        return 'Now serving <span class="serving-type">drinks</span>';
-      }
-      // 4pm-midnight - dinner
-      if (time < 24) {
-        return 'Now serving <span class="serving-type">dinner</span>';
-      }
-    }
-
-    // Tuesday-Friday (2-5)
-    if (day >= 2 && day <= 5) {
-      // Before 4pm - closed
-      if (time < 16) {
-        return 'Now closed, see you at 4pm';
-      }
-      // 4pm-midnight - dinner
-      if (time < 24) {
-        return 'Now serving <span class="serving-type">dinner</span>';
-      }
-    }
-
-    // Default closed message
-    if (day === 0) {
-      return 'Now closed, see you Tuesday';
-    }
-    return 'Now closed, see you tomorrow';
+  function serving(current, next) {
+    return 'Now serving <span class="serving-type">' + current + '</span>' +
+           '<span class="serving-next">' + next + '</span>';
   }
 
   /**
-   * Update the now-serving element
+   * Format "Now closed" output with next service
+   * @param {string} next - Next service with time
+   * @returns {string} HTML string
    */
-  function updateStatus() {
-    const el = document.getElementById('now-serving');
-    if (el) {
-      el.innerHTML = getServingStatus();
+  function closed(next) {
+    return 'Now closed<span class="serving-next">' + next + '</span>';
+  }
+
+  /**
+   * Check if day is a weekend (Sat/Sun)
+   * @param {number} day - Day of week (0-6)
+   * @returns {boolean}
+   */
+  function isWeekend(day) {
+    return day === SAT || day === SUN;
+  }
+
+  /**
+   * Get current serving status based on day and time
+   * @returns {string} HTML status message
+   */
+  function getStatus() {
+    var now = new Date();
+    var day = now.getDay();
+    var time = now.getHours() + now.getMinutes() / 60;
+    var yesterday = day === SUN ? SAT : day - 1;
+
+    // ─────────────────────────────────────────────────────────────
+    // AFTER MIDNIGHT (12am-1:30am) - Bar carryover from previous night
+    // ─────────────────────────────────────────────────────────────
+    if (time < 1.5) {
+      // Skip if yesterday was Monday (closed) or today is Tuesday (no carryover)
+      if (yesterday !== MON && day !== TUE) {
+        if (isWeekend(day)) return serving('bar only', 'brunch at 10 am');
+        if (day === MON) return serving('bar only', 'dinner tuesday at 4');
+        return serving('bar only', 'dinner at 4');
+      }
     }
+
+    // ─────────────────────────────────────────────────────────────
+    // MONDAY - Closed all day
+    // ─────────────────────────────────────────────────────────────
+    if (day === MON) {
+      return closed('dinner tuesday at 4');
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // WEEKEND (Sat/Sun) - Brunch, Bar gap, Dinner, Late Bar
+    // ─────────────────────────────────────────────────────────────
+    if (isWeekend(day)) {
+      if (time < 10) return closed('brunch at 10 am');
+      if (time < 14) return serving('brunch', 'dinner at 4');
+      if (time < 16) return serving('bar only', 'dinner at 4');
+      return serving('dinner', 'bar only at midnight');
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // WEEKDAY (Tue-Fri) - Dinner and Late Bar
+    // ─────────────────────────────────────────────────────────────
+    if (time < 16) return closed('dinner at 4');
+    return serving('dinner', 'bar only at midnight');
+  }
+
+  /**
+   * Update the #now-serving element with current status
+   */
+  function update() {
+    var el = document.getElementById('now-serving');
+    if (el) el.innerHTML = getStatus();
   }
 
   // Initialize on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateStatus);
+    document.addEventListener('DOMContentLoaded', update);
   } else {
-    updateStatus();
+    update();
   }
 
-  // Update every minute
-  setInterval(updateStatus, 60000);
+  // Refresh every minute
+  setInterval(update, 60000);
 })();
