@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none">
+  <defs>
+    <linearGradient id="coupe-liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8E8E8" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#B8B8B8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#888888" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="coupe-glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#FAF9F6" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="coupe-glow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stem-shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#FAF9F6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="300" fill="#0D0D0D"/>
+
+
+  <!-- Base/foot -->
+  <ellipse cx="100" cy="260" rx="35" ry="8" fill="url(#coupe-glass)" stroke="#FAF9F6" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Stem -->
+  <rect x="96" y="165" width="8" height="95" fill="url(#stem-shine)"/>
+
+  <!-- Coupe bowl -->
+  <path d="M35 80 Q35 160 100 165 Q165 160 165 80 Q165 70 100 70 Q35 70 35 80 Z"
+        fill="url(#coupe-glass)" stroke="#FAF9F6" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Liquid in coupe -->
+  <path d="M42 85 Q42 150 100 155 Q158 150 158 85 Q158 78 100 78 Q42 78 42 85 Z"
+        fill="url(#coupe-liquid)"/>
+
+  <!-- Liquid surface highlight -->
+  <ellipse cx="100" cy="82" rx="55" ry="8" fill="#FAF9F6" opacity="0.08"/>
+
+  <!-- Glass rim highlight -->
+  <ellipse cx="100" cy="72" rx="62" ry="6" fill="none" stroke="#FAF9F6" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- Bowl highlight -->
+  <path d="M45 85 Q50 140 85 150" stroke="#FAF9F6" stroke-opacity="0.25" stroke-width="1.5" fill="none"/>
+
+  <!-- Long thin curly lemon twist -->
+  <path d="M120 65 Q130 58 138 65 Q145 75 138 82 Q130 88 125 80 Q120 72 128 68 Q135 65 140 72 Q144 80 138 86 Q130 92 125 85"
+        fill="none" stroke="#FAF9F6" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Twist continues curling -->
+  <path d="M125 85 Q118 90 122 98 Q128 105 135 100 Q140 94 135 88"
+        fill="none" stroke="#FAF9F6" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Delicate spiral end -->
+  <path d="M135 88 Q142 85 145 92 Q147 100 140 103"
+        fill="none" stroke="#FAF9F6" stroke-opacity="0.25" stroke-width="1" stroke-linecap="round"/>
+</svg>

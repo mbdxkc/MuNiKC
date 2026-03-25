@@ -3,7 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <!--
-    MuNi KC - Menus Page  | mediaBrilliance digitalxtudio
+    ==========================================================================
+    MuNi KC - Menus Page
+    ==========================================================================
+    @project     MuNi KC Website
+    @author      mediaBrilliance digitalxtudio
+    @updated     2026-03-25
+
+    @description
+      Full menu page for MuNi KC featuring:
+      - Cocktails: Rocks, Collins, and Coupe glass presentations
+      - Dinner: Small Plates, Sandwiches, Big Plates & Bowls
+      - Brunch: Weekend menu (Sat-Sun 10am-2pm)
+
+    @images
+      SVG placeholder images used for menu cards:
+      - cocktail-rocks.svg    : Rocks glass (Old Fashioned style)
+      - cocktail-collins.svg  : Collins glass with bamboo pick
+      - cocktail-coupe.svg    : Coupe glass with citrus twist
+      - plate-small.svg       : Small appetizer plate
+      - plate-big.svg         : Large dinner plate
+      - plate-bowl.svg        : Deep bowl with chopsticks
+      - plate-bowl-small.svg  : Small parfait bowl
+      - plate-sandwich.svg    : Sandwich with fries
+    ==========================================================================
     -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -55,145 +78,100 @@
       <section class="section-sm">
         <div class="container text-center">
           <div class="flex flex-center gap-md flex-wrap">
-            <a href="#drinks" class="button button-secondary">Drinks</a>
+            <a href="#cocktails" class="button button-secondary">Cocktails</a>
             <a href="#food" class="button button-secondary">Dinner</a>
             <a href="#brunch" class="button button-secondary">Brunch</a>
           </div>
         </div>
       </section>
 
-      <!-- DRINKS SECTION -->
-      <section class="section" id="drinks">
+      <!-- ====================================================================
+           COCKTAILS SECTION
+           Glass types: rocks (whiskey), collins (tall/ice), coupe (stemmed)
+           ==================================================================== -->
+      <section class="section" id="cocktails">
         <div class="container">
-          <h2 class="text-3xl mb-sm text-center">Drinks</h2>
+          <h2 class="text-3xl mb-sm text-center">Cocktails</h2>
           <p class="text-center text-sm text-muted mb-lg">
             <a href="#food">Dinner</a> · <a href="#brunch">Brunch</a>
           </p>
 
-          <h3 class="text-xl mb-md text-primary">Cocktails</h3>
-          <div class="menu-grid mb-xl">
+          <div class="menu-grid">
             <article class="menu-card">
-              <div class="menu-card-image"><span>Old Fashioned</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Old Fashioned</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Old Fashioned</h4>
                 <p class="menu-card-desc">Bourbon, bitters, sugar, orange</p>
-                <span class="menu-card-price">$10</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Horsefeather</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Horsefeather</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Horsefeather</h4>
                 <p class="menu-card-desc">Whiskey, ginger beer, bitters</p>
-                <span class="menu-card-price">$10</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Fist of Fury</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Fist of Fury</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Fist of Fury</h4>
                 <p class="menu-card-desc">House specialty</p>
-                <span class="menu-card-price">$10</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Havana Club</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Havana Club</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Havana Club</h4>
                 <p class="menu-card-desc">Rum, lime, mint, soda</p>
-                <span class="menu-card-price">$12</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Suffering Bastard</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Suffering Bastard</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Suffering Bastard</h4>
                 <p class="menu-card-desc">Gin, brandy, lime, ginger</p>
-                <span class="menu-card-price">$12</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>El Diablo</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>El Diablo</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">El Diablo</h4>
                 <p class="menu-card-desc">Tequila, crème de cassis, lime, ginger</p>
-                <span class="menu-card-price">$12</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Tommy's Margarita</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Tommy's Margarita</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Tommy's Margarita</h4>
                 <p class="menu-card-desc">Tequila, lime, agave</p>
-                <span class="menu-card-price">$12</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Strawberry Daiquiri</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Strawberry Daiquiri</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Strawberry Daiquiri</h4>
                 <p class="menu-card-desc">Rum, fresh strawberry, lime</p>
-                <span class="menu-card-price">$13</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Muni Margarita</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Muni Margarita</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Muni Margarita</h4>
                 <p class="menu-card-desc">House signature margarita</p>
-                <span class="menu-card-price">$14</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Cock and Bull</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Cock and Bull</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Cock and Bull Special</h4>
                 <p class="menu-card-desc">House specialty</p>
-                <span class="menu-card-price">$14</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Banana Stand</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Banana Stand</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">There's Always Muni in the Banana Stand</h4>
                 <p class="menu-card-desc">Banana-forward tropical cocktail</p>
-                <span class="menu-card-price">$14</span>
-              </div>
-            </article>
-          </div>
-
-          <h3 class="text-xl mb-md text-primary">Beer & Wine</h3>
-          <div class="menu-grid mb-xl">
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Drafts</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Rotating Drafts</h4>
-                <p class="menu-card-desc">Local and craft selections</p>
-                <span class="menu-card-price">See board</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Cans</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Cans & Bottles</h4>
-                <p class="menu-card-desc">Domestic & Import</p>
-                <span class="menu-card-price">Varies</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Wine</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Red / White / Rosé</h4>
-                <p class="menu-card-desc">By the glass</p>
-                <span class="menu-card-price">Varies</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>NA</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Non-Alcoholic</h4>
-                <p class="menu-card-desc">NA Beer & Mocktails</p>
-                <span class="menu-card-price">Ask bartender</span>
               </div>
             </article>
           </div>
@@ -202,144 +180,102 @@
 
       <hr class="divider container">
 
-      <!-- FOOD SECTION -->
+      <!-- ====================================================================
+           DINNER SECTION
+           Categories: Small Plates, Sandwiches, Big Plates & Bowls
+           ==================================================================== -->
       <section class="section" id="food">
         <div class="container">
           <h2 class="text-3xl mb-sm text-center">Dinner</h2>
           <p class="text-center text-sm text-muted mb-lg">
-            <a href="#drinks">Drinks</a> · <a href="#brunch">Brunch</a>
+            <a href="#cocktails">Cocktails</a> · <a href="#brunch">Brunch</a>
           </p>
 
+          <h3 class="text-xl mb-md text-primary">Small Plates</h3>
           <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image"><span>Rangoon</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Rangoon</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Chorizo Rangoon</h4>
                 <p class="menu-card-desc">Crispy wontons, chorizo, cream cheese</p>
-                <span class="menu-card-price">$10</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Chive Cake</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Chive Cake</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Chive Cake</h4>
                 <p class="menu-card-desc">Pan-fried, crispy edges <span class="tag">GF</span> <span class="tag">V</span></p>
-                <span class="menu-card-price">$12</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Wings</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Wings</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">MuNi Wings</h4>
                 <p class="menu-card-desc">House-seasoned, crispy fried</p>
-                <span class="menu-card-price">$13</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Egg Roll</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Cheese Steak Egg Roll</h4>
-                <p class="menu-card-desc">Philly-style, crispy wrapper</p>
-                <span class="menu-card-price">$14</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Empanada</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Empanada</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Gapow Beef Empanada</h4>
                 <p class="menu-card-desc">Thai basil beef, flaky crust</p>
-                <span class="menu-card-price">$14</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Dumplings</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Dumplings</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Birria Dumplings</h4>
                 <p class="menu-card-desc">Braised beef, consommé dip</p>
-                <span class="menu-card-price">$14</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Nachos</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Nachos</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">KC Loaded Nachos</h4>
                 <p class="menu-card-desc">Fully loaded, house chips <span class="tag">GF</span></p>
-                <span class="menu-card-price">$14</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Verde</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Maxamiliano Verde</h4>
-                <p class="menu-card-desc">House specialty appetizer</p>
-                <span class="menu-card-price">$14</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Pozole</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Thom Yum Pozole</h4>
-                <p class="menu-card-desc">Thai-Mexican fusion soup <span class="tag">GF</span></p>
-                <span class="menu-card-price">$9</span>
               </div>
             </article>
           </div>
 
-          <div class="menu-grid">
+          <h3 class="text-xl mb-md text-primary">Sandwiches</h3>
+          <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image"><span>Tacos</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Thaimex Smash Tacos</h4>
-                <p class="menu-card-desc">Smashed patty, Thai-Mex fusion</p>
-                <span class="menu-card-price">$15</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Chicken</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Chicken</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Hot Honey Chicken Sandwich</h4>
                 <p class="menu-card-desc">Crispy chicken, hot honey glaze</p>
-                <span class="menu-card-price">$16</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Burger</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Burger</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Smash Dat MuNi</h4>
                 <p class="menu-card-desc">Double smash burger</p>
-                <span class="menu-card-price">$16</span>
               </div>
             </article>
+          </div>
+
+          <h3 class="text-xl mb-md text-primary">Big Plates & Bowls</h3>
+          <div class="menu-grid">
             <article class="menu-card">
-              <div class="menu-card-image"><span>Tri Thai</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Tri Thai</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Tri Thai Tacos</h4>
                 <p class="menu-card-desc">Three Thai-inspired tacos</p>
-                <span class="menu-card-price">$17</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Rice Bowl</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Rice Bowl</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">City Market Rice Bowl</h4>
                 <p class="menu-card-desc">Fresh, market-inspired <span class="tag">GF</span></p>
-                <span class="menu-card-price">$19</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Kow Soi</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Kow Soi</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Kow Soi Beef</h4>
                 <p class="menu-card-desc">Northern Thai curry noodles</p>
-                <span class="menu-card-price">$22</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Salmon</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Flame-Kissed Salmon</h4>
-                <p class="menu-card-desc">Grilled salmon, seasonal sides</p>
-                <span class="menu-card-price">$29</span>
               </div>
             </article>
           </div>
@@ -348,86 +284,90 @@
 
       <hr class="divider container">
 
-      <!-- BRUNCH SECTION -->
+      <!-- ====================================================================
+           BRUNCH SECTION
+           Saturday & Sunday 10am-2pm
+           Categories: Small Plates, Sandwiches, Big Plates & Bowls
+           ==================================================================== -->
       <section class="section" id="brunch">
         <div class="container">
           <h2 class="text-3xl mb-sm text-center">Brunch</h2>
           <p class="text-center text-sm text-muted mb-sm">
-            <a href="#drinks">Drinks</a> · <a href="#food">Dinner</a>
+            <a href="#cocktails">Cocktails</a> · <a href="#food">Dinner</a>
           </p>
           <p class="text-center text-muted mb-lg">Saturday & Sunday · 10am – 2pm</p>
 
-          <div class="menu-grid">
+          <h3 class="text-xl mb-md text-primary">Small Plates</h3>
+          <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image"><span>Avocado</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Avocado</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Avocado Toast</h4>
-                <p class="menu-card-desc">Fresh avocado, sourdough (+$3 egg)</p>
-                <span class="menu-card-price">$10</span>
+                <p class="menu-card-desc">Fresh avocado, sourdough (add egg)</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Parfait</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl-small.svg');"><span>Parfait</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">River Market Parfait</h4>
                 <p class="menu-card-desc">Yogurt, granola, fresh fruit</p>
-                <span class="menu-card-price">$12</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Empanada</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Empanada</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Muni Breakfast Empanada</h4>
                 <p class="menu-card-desc">Eggs, cheese, chorizo</p>
-                <span class="menu-card-price">$15</span>
               </div>
             </article>
+          </div>
+
+          <h3 class="text-xl mb-md text-primary">Sandwiches</h3>
+          <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image"><span>Thai Sausage</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Thai Sausage Biscuit & Gravy</h4>
-                <p class="menu-card-desc">House Thai sausage, buttermilk biscuit</p>
-                <span class="menu-card-price">$16</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>French Toast</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Grilled Banana French Toast</h4>
-                <p class="menu-card-desc">Caramelized banana, maple</p>
-                <span class="menu-card-price">$17</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Fried Chicken</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Fried Chicken Biscuit & Gravy</h4>
-                <p class="menu-card-desc">Crispy chicken, sausage gravy</p>
-                <span class="menu-card-price">$18</span>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image"><span>Pork Belly</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Pork Belly</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Pork Belly Breakfast Sando</h4>
                 <p class="menu-card-desc">Crispy pork belly, egg, brioche</p>
-                <span class="menu-card-price">$18</span>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="text-xl mb-md text-primary">Big Plates & Bowls</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Thai Sausage</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Thai Sausage Biscuit & Gravy</h4>
+                <p class="menu-card-desc">House Thai sausage, buttermilk biscuit</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>KC Classic</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>French Toast</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Grilled Banana French Toast</h4>
+                <p class="menu-card-desc">Caramelized banana, maple</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Fried Chicken</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Fried Chicken Biscuit & Gravy</h4>
+                <p class="menu-card-desc">Crispy chicken, sausage gravy</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>KC Classic</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">KC Classic Breakfast</h4>
                 <p class="menu-card-desc">Eggs, meat, potatoes, toast</p>
-                <span class="menu-card-price">$18</span>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image"><span>Chinoquiles</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Chinoquiles</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Chinoquiles</h4>
                 <p class="menu-card-desc">Thai-Mex chilaquiles fusion</p>
-                <span class="menu-card-price">$18</span>
               </div>
             </article>
           </div>
@@ -437,7 +377,7 @@
       <section class="section-sm">
         <div class="container container-sm text-center">
           <p class="text-sm text-muted">
-            Menu items and prices subject to change. Please ask your server about daily specials and dietary accommodations.
+            Menu items subject to change. Please ask your server about daily specials and dietary accommodations.
             <br><span class="text-xs">GF = Gluten Free · V = Vegetarian</span>
           </p>
         </div>

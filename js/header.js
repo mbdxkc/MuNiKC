@@ -32,6 +32,7 @@
 
   /** Links displayed on the left side of the header */
   const navLinksLeft = [
+    { href: './', label: 'Home' },
     { href: './menus.html', label: 'Menus' },
     { href: './about.html', label: 'About' },
     { href: './contact.html', label: 'Contact' }
@@ -95,7 +96,6 @@
      ========================================================================== */
 
   const mobileMenuHTML = `
-    <a href="./" class="nav-link">Home</a>
     ${navLinks.map(link =>
       `<a href="${link.href}" class="nav-link">${link.label}</a>`
     ).join('')}

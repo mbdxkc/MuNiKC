@@ -1182,15 +1182,29 @@ img{
   transform: translateY(-2px);
 }
 
+/*
+ * Menu Card Image
+ * Uses SVG placeholder images as backgrounds (contain for full visibility)
+ * Images: cocktail-*.svg, plate-*.svg in /images/
+ * Hides text span when background-image is present
+ */
 .menu-card-image{
   aspect-ratio: 16/10;
-  background: rgba(255,255,255,.05);
+  background-color: #0D0D0D;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
   font-size: .875rem;
   border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+/* Hide placeholder text when SVG background is applied */
+.menu-card-image[style*="background-image"] span{
+  display: none;
 }
 
 .menu-card-image img{

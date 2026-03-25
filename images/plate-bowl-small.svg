@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none">
+  <defs>
+    <linearGradient id="sm-bowl-interior" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8E8E8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#888888" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="sm-bowl-rim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#FAF9F6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0.28"/>
+    </linearGradient>
+    <radialGradient id="sm-bowl-contents" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0.05"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="300" fill="#0D0D0D"/>
+
+  <!-- Bowl shadow -->
+  <ellipse cx="101" cy="195" rx="48" ry="12" fill="#FAF9F6" opacity="0.04"/>
+
+  <!-- Small bowl body -->
+  <path d="M45 130 Q45 185 100 190 Q155 185 155 130 Q155 118 100 118 Q45 118 45 130 Z"
+        fill="url(#sm-bowl-interior)" stroke="#FAF9F6" stroke-opacity="0.28" stroke-width="1.5"/>
+
+  <!-- Bowl rim -->
+  <ellipse cx="100" cy="124" rx="55" ry="14" fill="url(#sm-bowl-rim)" stroke="#FAF9F6" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- Bowl shine -->
+  <ellipse cx="75" cy="145" rx="22" ry="28" fill="#FAF9F6" fill-opacity="0.08"/>
+
+  <!-- Contents surface - layered parfait look -->
+  <ellipse cx="100" cy="132" rx="45" ry="10" fill="url(#sm-bowl-contents)"/>
+
+  <!-- Parfait layers -->
+  <path d="M60 140 Q100 148 140 140" stroke="#FAF9F6" stroke-opacity="0.15" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M65 152 Q100 158 135 152" stroke="#FAF9F6" stroke-opacity="0.12" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M70 164 Q100 168 130 164" stroke="#FAF9F6" stroke-opacity="0.09" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Granola/toppings -->
+  <circle cx="85" cy="128" r="4" fill="#FAF9F6" fill-opacity="0.18"/>
+  <circle cx="100" cy="126" r="3.5" fill="#FAF9F6" fill-opacity="0.15"/>
+  <circle cx="115" cy="128" r="4" fill="#FAF9F6" fill-opacity="0.16"/>
+  <circle cx="92" cy="132" r="3" fill="#FAF9F6" fill-opacity="0.12"/>
+  <circle cx="108" cy="131" r="3" fill="#FAF9F6" fill-opacity="0.12"/>
+
+  <!-- Fruit pieces -->
+  <ellipse cx="80" cy="130" rx="5" ry="3" fill="#FAF9F6" fill-opacity="0.2" transform="rotate(-15 80 130)"/>
+  <ellipse cx="120" cy="130" rx="4" ry="2.5" fill="#FAF9F6" fill-opacity="0.18" transform="rotate(10 120 130)"/>
+
+  <!-- Bowl highlight -->
+  <path d="M55 138 Q62 168 85 180" stroke="#FAF9F6" stroke-opacity="0.2" stroke-width="1.5" fill="none"/>
+
+  <!-- Mint garnish -->
+  <path d="M125 120 Q132 112 128 105" stroke="#FAF9F6" stroke-opacity="0.25" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M127 118 Q135 108 130 100" stroke="#FAF9F6" stroke-opacity="0.18" stroke-width="1" fill="none" stroke-linecap="round"/>
+</svg>

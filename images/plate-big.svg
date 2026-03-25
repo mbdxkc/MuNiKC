@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none">
+  <defs>
+    <linearGradient id="big-plate-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0.06"/>
+    </linearGradient>
+    <radialGradient id="big-plate-shine" cx="22%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="big-protein" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF9F6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="300" fill="#0D0D0D"/>
+
+  <!-- Plate shadow -->
+  <ellipse cx="102" cy="245" rx="98" ry="35" fill="#FAF9F6" opacity="0.06"/>
+
+  <!-- Large dinner plate rim - maximum width -->
+  <ellipse cx="100" cy="185" rx="98" ry="55" fill="none" stroke="#FAF9F6" stroke-opacity="0.42" stroke-width="3"/>
+
+  <!-- Plate surface -->
+  <ellipse cx="100" cy="185" rx="88" ry="48" fill="url(#big-plate-surface)"/>
+
+  <!-- Inner rim -->
+  <ellipse cx="100" cy="185" rx="76" ry="40" fill="none" stroke="#FAF9F6" stroke-opacity="0.18" stroke-width="1.5"/>
+
+  <!-- Plate shine -->
+  <ellipse cx="55" cy="160" rx="45" ry="28" fill="url(#big-plate-shine)"/>
+
+  <!-- Main protein - large -->
+  <ellipse cx="80" cy="170" rx="48" ry="30" fill="url(#big-protein)" transform="rotate(-8 80 170)"/>
+  <path d="M40 158 Q62 145 92 152" stroke="#FAF9F6" stroke-opacity="0.28" stroke-width="2.5" fill="none"/>
+  <path d="M48 178 Q78 165 115 174" stroke="#FAF9F6" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+
+  <!-- Grill marks -->
+  <line x1="42" y1="162" x2="100" y2="154" stroke="#FAF9F6" stroke-opacity="0.2" stroke-width="4"/>
+  <line x1="48" y1="178" x2="108" y2="170" stroke="#FAF9F6" stroke-opacity="0.16" stroke-width="4"/>
+  <line x1="55" y1="194" x2="115" y2="186" stroke="#FAF9F6" stroke-opacity="0.12" stroke-width="3.5"/>
+
+  <!-- Side - starch -->
+  <ellipse cx="150" cy="172" rx="32" ry="20" fill="#FAF9F6" fill-opacity="0.18"/>
+  <ellipse cx="150" cy="168" rx="26" ry="15" fill="#FAF9F6" fill-opacity="0.12"/>
+
+  <!-- Side - vegetables -->
+  <circle cx="130" cy="200" r="12" fill="#FAF9F6" fill-opacity="0.16"/>
+  <circle cx="152" cy="195" r="10" fill="#FAF9F6" fill-opacity="0.14"/>
+  <circle cx="170" cy="200" r="8" fill="#FAF9F6" fill-opacity="0.12"/>
+  <circle cx="142" cy="212" r="7" fill="#FAF9F6" fill-opacity="0.1"/>
+
+  <!-- Sauce drizzle -->
+  <path d="M45 205 Q85 218 120 202 Q150 188 175 205" stroke="#FAF9F6" stroke-opacity="0.2" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M55 198 Q80 208 105 195" stroke="#FAF9F6" stroke-opacity="0.14" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Herb garnish -->
+  <path d="M28 178 Q15 160 28 142" stroke="#FAF9F6" stroke-opacity="0.32" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M34 175 Q24 158 38 140" stroke="#FAF9F6" stroke-opacity="0.24" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M40 172 Q32 158 42 145" stroke="#FAF9F6" stroke-opacity="0.18" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Micro garnish dots -->
+  <circle cx="48" cy="138" r="3" fill="#FAF9F6" fill-opacity="0.28"/>
+  <circle cx="125" cy="155" r="2.5" fill="#FAF9F6" fill-opacity="0.22"/>
+  <circle cx="178" cy="185" r="2.5" fill="#FAF9F6" fill-opacity="0.2"/>
+  <circle cx="68" cy="215" r="2" fill="#FAF9F6" fill-opacity="0.18"/>
+  <circle cx="20" cy="190" r="2" fill="#FAF9F6" fill-opacity="0.15"/>
+</svg>
