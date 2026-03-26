@@ -68,8 +68,8 @@
       // Skip if yesterday was Monday (closed) or today is Tuesday (no carryover)
       if (yesterday !== MON && day !== TUE) {
         if (isWeekend(day)) return serving('bar only', 'brunch at 10 am');
-        if (day === MON) return serving('bar only', 'dinner tuesday at 4');
-        return serving('bar only', 'dinner at 4');
+        if (day === MON) return serving('bar only', 'dinner tuesday at 4 pm');
+        return serving('bar only', 'dinner at 4 pm');
       }
     }
 
@@ -77,7 +77,7 @@
     // MONDAY - Closed all day
     // ─────────────────────────────────────────────────────────────
     if (day === MON) {
-      return closed('dinner tuesday at 4');
+      return closed('dinner tuesday at 4 pm');
     }
 
     // ─────────────────────────────────────────────────────────────
@@ -85,15 +85,15 @@
     // ─────────────────────────────────────────────────────────────
     if (isWeekend(day)) {
       if (time < 10) return closed('brunch at 10 am');
-      if (time < 14) return serving('brunch', 'dinner at 4');
-      if (time < 16) return serving('bar only', 'dinner at 4');
+      if (time < 14) return serving('brunch', 'dinner at 4 pm');
+      if (time < 16) return serving('bar only', 'dinner at 4 pm');
       return serving('dinner', 'bar only at midnight');
     }
 
     // ─────────────────────────────────────────────────────────────
     // WEEKDAY (Tue-Fri) - Dinner and Late Bar
     // ─────────────────────────────────────────────────────────────
-    if (time < 16) return closed('dinner at 4');
+    if (time < 16) return closed('dinner at 4 pm');
     return serving('dinner', 'bar only at midnight');
   }
 
