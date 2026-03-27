@@ -179,7 +179,7 @@
         // Remove effect after animation completes
         setTimeout(function() {
           carousel.classList.remove('rewinding');
-        }, 850);
+        }, 1250);
       } else {
         currentIndex++;
         updateCarousel();
