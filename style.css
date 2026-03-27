@@ -1091,12 +1091,26 @@ img{
   border-radius: var(--radius-sm);
 }
 
-/* VHS Rewind Effect */
+/* ==========================================================================
+   VHS REWIND EFFECT
+   Triggered when carousel reaches end and loops back to first slide.
+   Effect starts heavy and smooths out, ending with a "snap" pop.
+
+   Components:
+   - Scan lines overlay (::before) - CRT monitor effect
+   - Tracking line (::after) - horizontal distortion band
+   - Slide warp - vertical stretch/skew distortion
+   - Image distort - color/saturation/blur shifts
+
+   All animations use ease-out timing to decay naturally.
+   Duration: 1.2s (synced with JS setTimeout)
+   ========================================================================== */
+
 .gallery-carousel.rewinding .carousel-track{
   transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Scan lines overlay - fades out */
+/* Scan lines - horizontal CRT lines that fade out */
 .gallery-carousel.rewinding::before{
   content: '';
   position: absolute;
