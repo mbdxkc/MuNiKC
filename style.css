@@ -1045,6 +1045,7 @@ img{
 .gallery-carousel{
   position: relative;
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 .carousel-track{
@@ -1084,8 +1085,9 @@ img{
   font-size: .875rem;
 }
 
-.carousel-slide{
-  touch-action: pan-x pinch-zoom;
+.carousel-track{
+  touch-action: pan-y;
+  pointer-events: none;
 }
 
 .carousel-slide img{
@@ -1093,8 +1095,6 @@ img{
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  touch-action: none;
-  pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -1225,6 +1225,7 @@ img{
   justify-content: center;
   transition: background var(--t-fast) ease;
   z-index: 10;
+  pointer-events: auto;
 }
 
 .carousel-btn:hover{
