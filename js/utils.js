@@ -168,11 +168,22 @@
       track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
     }
 
-    /** Advance to next slide, wrapping to start if at end */
+    /** Advance to next slide, with VHS rewind at end */
     function nextSlide() {
       var maxIndex = Math.max(0, slides.length - slidesPerView);
-      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
-      updateCarousel();
+      if (currentIndex >= maxIndex) {
+        // Trigger VHS rewind effect
+        carousel.classList.add('rewinding');
+        currentIndex = 0;
+        updateCarousel();
+        // Remove effect after animation completes
+        setTimeout(function() {
+          carousel.classList.remove('rewinding');
+        }, 850);
+      } else {
+        currentIndex++;
+        updateCarousel();
+      }
     }
 
     /** Go to previous slide, wrapping to end if at start */

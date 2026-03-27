@@ -1091,6 +1091,45 @@ img{
   border-radius: var(--radius-sm);
 }
 
+/* VHS Rewind Effect */
+.gallery-carousel.rewinding .carousel-track{
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.gallery-carousel.rewinding::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.3) 2px,
+    rgba(0,0,0,0.3) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+  animation: vhs-flicker 0.1s infinite;
+}
+
+.gallery-carousel.rewinding .carousel-slide img{
+  filter: saturate(1.2) contrast(1.1) hue-rotate(-5deg);
+  animation: vhs-glitch 0.15s infinite;
+}
+
+@keyframes vhs-flicker{
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes vhs-glitch{
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(1px); }
+  75% { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
 .carousel-btn{
   position: absolute;
   top: 50%;
