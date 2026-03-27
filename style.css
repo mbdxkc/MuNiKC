@@ -1230,6 +1230,17 @@ img{
   right: 1rem;
 }
 
+@media (max-width: 480px){
+  .carousel-btn{
+    width: 52px;
+    height: 52px;
+  }
+  .carousel-btn svg{
+    width: 28px;
+    height: 28px;
+  }
+}
+
 /* instagram carousel */
 .instagram-carousel{
   position: relative;
