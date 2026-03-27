@@ -1161,7 +1161,7 @@ img{
   100% { top: 100%; opacity: 0; }
 }
 
-/* Warp starts heavy, smooths out */
+/* Warp starts heavy, smooths out, snaps at end */
 @keyframes vhs-warp{
   0% { transform: scaleY(1.02) skewX(-0.5deg); }
   10% { transform: scaleY(0.98) skewX(0.6deg); }
@@ -1169,19 +1169,21 @@ img{
   35% { transform: scaleY(0.99) skewX(0.3deg); }
   50% { transform: scaleY(1.008) skewX(-0.2deg); }
   70% { transform: scaleY(0.995) skewX(0.1deg); }
-  85% { transform: scaleY(1.002) skewX(-0.05deg); }
-  100% { transform: scaleY(1) skewX(0); }
+  85% { transform: scaleY(1) skewX(0); }
+  92% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }
 
-/* Color distortion starts intense, normalizes */
+/* Color distortion starts intense, normalizes, pops at end */
 @keyframes vhs-distort{
   0% { filter: saturate(1.5) contrast(1.25) hue-rotate(-15deg) blur(1px); }
   10% { filter: saturate(1.4) contrast(1.2) hue-rotate(10deg) blur(0.5px); }
   25% { filter: saturate(1.35) contrast(1.15) hue-rotate(-8deg) blur(0.5px); }
   40% { filter: saturate(1.25) contrast(1.1) hue-rotate(5deg) blur(0); }
   60% { filter: saturate(1.15) contrast(1.05) hue-rotate(-3deg); }
-  80% { filter: saturate(1.05) contrast(1.02) hue-rotate(1deg); }
-  100% { filter: saturate(1) contrast(1) hue-rotate(0); }
+  80% { filter: saturate(1) contrast(1) hue-rotate(0); }
+  92% { filter: saturate(1) contrast(1.15) brightness(1.15); }
+  100% { filter: saturate(1) contrast(1) brightness(1); }
 }
 
 .carousel-btn{
