@@ -1089,6 +1089,10 @@ img{
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-sm);
+  touch-action: pan-x;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* ==========================================================================
