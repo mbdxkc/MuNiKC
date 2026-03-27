@@ -133,13 +133,7 @@
       return 3;
     });
 
-    // Instagram carousel - 6 slides desktop, scaling down for smaller screens
-    initSingleCarousel('.instagram-carousel', function() {
-      if (window.innerWidth <= 480) return 2;
-      if (window.innerWidth <= 768) return 3;
-      if (window.innerWidth <= 1024) return 4;
-      return 6;
-    });
+    // Instagram feed now handled by Behold.so widget (auto-updating)
   }
 
   /**
