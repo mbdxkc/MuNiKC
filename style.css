@@ -1212,7 +1212,7 @@ img{
   height: 40px;
   border: none;
   border-radius: 50%;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.45);
   color: var(--text);
   cursor: pointer;
   display: flex;
