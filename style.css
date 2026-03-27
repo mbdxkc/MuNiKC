@@ -1084,15 +1084,20 @@ img{
   font-size: .875rem;
 }
 
+.carousel-slide{
+  touch-action: pan-x pinch-zoom;
+}
+
 .carousel-slide img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  touch-action: pan-x;
+  touch-action: none;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 /* ==========================================================================
