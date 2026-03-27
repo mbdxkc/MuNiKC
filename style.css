@@ -1042,16 +1042,23 @@ img{
   overflow: hidden;
 }
 
+/* ==========================================================================
+   GALLERY CAROUSEL
+   Touch behavior: Only arrow buttons are interactive. Track and images
+   ignore touch to prevent accidental zoom/pan when missing arrows.
+   ========================================================================== */
+
 .gallery-carousel{
   position: relative;
   overflow: hidden;
-  touch-action: pan-y;
+  touch-action: pan-y; /* Allow vertical page scroll only */
 }
 
 .carousel-track{
   display: flex;
   gap: 1rem;
   transition: transform var(--t-base) var(--ease);
+  pointer-events: none; /* Disable touch on track */
 }
 
 .carousel-slide{
@@ -1085,11 +1092,6 @@ img{
   font-size: .875rem;
 }
 
-.carousel-track{
-  touch-action: pan-y;
-  pointer-events: none;
-}
-
 .carousel-slide img{
   width: 100%;
   height: 100%;
@@ -1097,7 +1099,7 @@ img{
   border-radius: var(--radius-sm);
   user-select: none;
   -webkit-user-select: none;
-  -webkit-touch-callout: none;
+  -webkit-touch-callout: none; /* Prevent iOS long-press menu */
 }
 
 /* ==========================================================================
@@ -1225,7 +1227,7 @@ img{
   justify-content: center;
   transition: background var(--t-fast) ease;
   z-index: 10;
-  pointer-events: auto;
+  pointer-events: auto; /* Re-enable touch on buttons only */
 }
 
 .carousel-btn:hover{
