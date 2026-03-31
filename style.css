@@ -683,6 +683,138 @@ img{
 }
 
 /* =========================================================
+   Hours Section (Hero)
+   ========================================================= */
+.hours-wrapper{
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.hours{
+  text-align: left;
+}
+
+.hours-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.hours-row:last-child{
+  margin-bottom: 0;
+}
+
+/* Hot pink brunch text with glow */
+.brunch-text{
+  color: #FF1493;
+  font-weight: 700;
+  text-shadow:
+    0 0 10px rgba(255,20,147,0.8),
+    0 0 20px rgba(255,20,147,0.6),
+    0 0 30px rgba(255,20,147,0.4),
+    0 0 40px rgba(255,20,147,0.2);
+  animation: brunch-pulse 2s ease-in-out infinite;
+}
+
+@keyframes brunch-pulse{
+  0%, 100%{
+    text-shadow:
+      0 0 10px rgba(255,20,147,0.8),
+      0 0 20px rgba(255,20,147,0.6),
+      0 0 30px rgba(255,20,147,0.4),
+      0 0 40px rgba(255,20,147,0.2);
+  }
+  50%{
+    text-shadow:
+      0 0 15px rgba(255,20,147,1),
+      0 0 30px rgba(255,20,147,0.8),
+      0 0 45px rgba(255,20,147,0.6),
+      0 0 60px rgba(255,20,147,0.4);
+  }
+}
+
+/* =========================================================
+   Rising Bubbles (from Brunch)
+   ========================================================= */
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+.bubbles-container{
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble{
+  position: absolute;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,20,147,0.4) 0%,
+    rgba(255,20,147,0.2) 50%,
+    rgba(255,20,147,0.1) 100%
+  );
+  border: 1px solid rgba(255,20,147,0.3);
+  border-radius: 50%;
+  animation: bubble-rise linear infinite;
+}
+
+.bubble:nth-child(1){ width: 8px; height: 8px; left: 20%; animation-duration: 6s; animation-delay: 0s; }
+.bubble:nth-child(2){ width: 12px; height: 12px; left: 40%; animation-duration: 7s; animation-delay: 1s; }
+.bubble:nth-child(3){ width: 6px; height: 6px; left: 60%; animation-duration: 5s; animation-delay: 0.5s; }
+.bubble:nth-child(4){ width: 10px; height: 10px; left: 80%; animation-duration: 8s; animation-delay: 2s; }
+.bubble:nth-child(5){ width: 7px; height: 7px; left: 30%; animation-duration: 6.5s; animation-delay: 1.5s; }
+.bubble:nth-child(6){ width: 14px; height: 14px; left: 50%; animation-duration: 9s; animation-delay: 0.8s; }
+.bubble:nth-child(7){ width: 5px; height: 5px; left: 70%; animation-duration: 5.5s; animation-delay: 3s; }
+.bubble:nth-child(8){ width: 9px; height: 9px; left: 25%; animation-duration: 7.5s; animation-delay: 2.5s; }
+.bubble:nth-child(9){ width: 11px; height: 11px; left: 55%; animation-duration: 6.8s; animation-delay: 0.3s; }
+.bubble:nth-child(10){ width: 6px; height: 6px; left: 75%; animation-duration: 5.2s; animation-delay: 1.8s; }
+.bubble:nth-child(11){ width: 8px; height: 8px; left: 45%; animation-duration: 7.2s; animation-delay: 2.8s; }
+.bubble:nth-child(12){ width: 10px; height: 10px; left: 35%; animation-duration: 8.5s; animation-delay: 0.6s; }
+
+@keyframes bubble-rise{
+  0%{
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  25%{
+    transform: translateY(-25vh) translateX(10px) scale(0.95);
+    opacity: 0.7;
+  }
+  50%{
+    transform: translateY(-50vh) translateX(-5px) scale(0.85);
+    opacity: 0.5;
+  }
+  75%{
+    transform: translateY(-75vh) translateX(8px) scale(0.7);
+    opacity: 0.3;
+  }
+  100%{
+    transform: translateY(-100vh) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .brunch-text{
+    animation: none;
+  }
+  .bubble{
+    animation: none;
+    opacity: 0.3;
+  }
+}
+
+/* =========================================================
    12) card component
    ========================================================= */
 .card{
