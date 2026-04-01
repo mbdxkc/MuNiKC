@@ -705,6 +705,15 @@ img{
   margin-bottom: 0;
 }
 
+@media (max-width: 480px){
+  .hours-row{
+    flex-direction: column;
+    gap: 0.125rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+}
+
 /* Hot pink brunch text with glow */
 .brunch-text{
   color: #FF1493;
