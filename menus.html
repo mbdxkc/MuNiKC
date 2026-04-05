@@ -7,25 +7,16 @@
     MuNi KC - Menus Page
     ==========================================================================
     @project     MuNi KC Website
-    @author      mediaBrilliance digitalxtudio
-    @updated     2026-03-25
+    @author      mediaBrilliance digitalXtudio
+    @updated     2026-04-05
 
     @description
       Full menu page for MuNi KC featuring:
-      - Cocktails: Rocks, Collins, and Coupe glass presentations
+      - N/A Beer & Wine
+      - Zero Proof Cocktails
+      - Cocktails
       - Dinner: Small Plates, Sandwiches, Big Plates & Bowls
       - Brunch: Weekend menu (Sat-Sun 10am-2pm)
-
-    @images
-      SVG placeholder images used for menu cards:
-      - cocktail-rocks.svg    : Rocks glass (Old Fashioned style)
-      - cocktail-collins.svg  : Collins glass with bamboo pick
-      - cocktail-coupe.svg    : Coupe glass with citrus twist
-      - plate-small.svg       : Small appetizer plate
-      - plate-big.svg         : Large dinner plate
-      - plate-bowl.svg        : Deep bowl with chopsticks
-      - plate-bowl-small.svg  : Small parfait bowl
-      - plate-sandwich.svg    : Sandwich with fries
     ==========================================================================
     -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -78,6 +69,7 @@
       <section class="section-sm">
         <div class="container text-center">
           <div class="flex flex-center gap-md flex-wrap">
+            <a href="#na-beer-wine" class="button button-secondary">N/A Beer & Wine</a>
             <a href="#zero-proof" class="button button-secondary">Zero Proof</a>
             <a href="#cocktails" class="button button-secondary">Cocktails</a>
             <a href="#food" class="button button-secondary">Dinner</a>
@@ -87,43 +79,101 @@
       </section>
 
       <!-- ====================================================================
+           N/A BEER & WINE SECTION
+           ==================================================================== -->
+      <section class="section" id="na-beer-wine">
+        <div class="container">
+          <h2 class="text-3xl mb-sm text-center">N/A Beer & Wine</h2>
+          <p class="text-center text-sm text-muted mb-lg">
+            <a href="#zero-proof">Zero Proof</a> · <a href="#cocktails">Cocktails</a> · <a href="#food">Dinner</a> · <a href="#brunch">Brunch</a>
+          </p>
+
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Beer</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Boulevard Lemon Wheat</h4>
+                <p class="menu-card-desc">$6</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Beer</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Athletic Golden Ale</h4>
+                <p class="menu-card-desc">$7 <span class="tag">GF</span></p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Beer</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Best Day Lime Cerveza</h4>
+                <p class="menu-card-desc">$7</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Wine</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Fritz / Muller White</h4>
+                <p class="menu-card-desc">$8</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Wine</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Mionetto Sparkling</h4>
+                <p class="menu-card-desc">$11</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Beer</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Baseline Pale Ale</h4>
+                <p class="menu-card-desc">$7</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider container">
+
+      <!-- ====================================================================
            ZERO PROOF COCKTAILS SECTION
-           Non-alcoholic craft cocktails
            ==================================================================== -->
       <section class="section" id="zero-proof">
         <div class="container">
           <h2 class="text-3xl mb-sm text-center">Zero Proof Cocktails</h2>
           <p class="text-center text-sm text-muted mb-lg">
-            <a href="#cocktails">Cocktails</a> · <a href="#food">Dinner</a> · <a href="#brunch">Brunch</a>
+            <a href="#na-beer-wine">N/A Beer & Wine</a> · <a href="#cocktails">Cocktails</a> · <a href="#food">Dinner</a> · <a href="#brunch">Brunch</a>
           </p>
 
           <div class="menu-grid">
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Floral Citrus</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Floral</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Floral Citrus Fizz</h4>
-                <p class="menu-card-desc">Bright, botanical, refreshing</p>
+                <p class="menu-card-desc">Bright, botanical, refreshing · $11</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Ginger</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Suffering Bastard</h4>
+                <p class="menu-card-desc">Ginger, lime, bitters, soda · $8</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Margarita</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Margarita</h4>
+                <p class="menu-card-desc">Classic margarita, zero proof · $10</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Strawberry</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Strawberry Daiquiri</h4>
-                <p class="menu-card-desc">Fresh strawberry, lime, zero proof</p>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Suffering Bastard</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Suffering Bastard</h4>
-                <p class="menu-card-desc">Ginger, lime, bitters, soda</p>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Nogroni</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Heather's Nogroni</h4>
-                <p class="menu-card-desc">Classic negroni, zero proof</p>
+                <h4 class="menu-card-title">Cain's Strawberry Daiquiri</h4>
+                <p class="menu-card-desc">Fresh strawberry, lime · $8</p>
               </div>
             </article>
           </div>
@@ -134,13 +184,12 @@
 
       <!-- ====================================================================
            COCKTAILS SECTION
-           Glass types: rocks (whiskey), collins (tall/ice), coupe (stemmed)
            ==================================================================== -->
       <section class="section" id="cocktails">
         <div class="container">
           <h2 class="text-3xl mb-sm text-center">Cocktails</h2>
           <p class="text-center text-sm text-muted mb-lg">
-            <a href="#zero-proof">Zero Proof</a> · <a href="#food">Dinner</a> · <a href="#brunch">Brunch</a>
+            <a href="#na-beer-wine">N/A Beer & Wine</a> · <a href="#zero-proof">Zero Proof</a> · <a href="#food">Dinner</a> · <a href="#brunch">Brunch</a>
           </p>
 
           <div class="menu-grid">
@@ -148,77 +197,77 @@
               <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Old Fashioned</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Old Fashioned</h4>
-                <p class="menu-card-desc">Bourbon, bitters, sugar, orange</p>
+                <p class="menu-card-desc">Bourbon, angostura, turbinado · $13</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Horsefeather</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Havana</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Horsefeather</h4>
-                <p class="menu-card-desc">Whiskey, ginger beer, bitters</p>
+                <h4 class="menu-card-title">Havana Club</h4>
+                <p class="menu-card-desc">Old Tom gin, apricot, swedish punch, lemon · $12</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Boogaloo</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Electric Boogaloo</h4>
+                <p class="menu-card-desc">Coconut rum, ginger, ancho chile, hibiscus, lime, angostura, soda · $14</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Fist of Fury</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Fist of Fury</h4>
-                <p class="menu-card-desc">House specialty</p>
+                <p class="menu-card-desc">Thai chili and Thai basil infused vodka, velvet falernum, ginger beer · $10</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Havana Club</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Daiquiri</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Havana Club</h4>
-                <p class="menu-card-desc">Rum, lime, mint, soda</p>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Suffering Bastard</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Suffering Bastard</h4>
-                <p class="menu-card-desc">Gin, brandy, lime, ginger</p>
+                <h4 class="menu-card-title">Old Town Daiquiri</h4>
+                <p class="menu-card-desc">Rum blend, lime, mint oil · $14</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>El Diablo</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">El Diablo</h4>
-                <p class="menu-card-desc">Tequila, crème de cassis, lime, ginger</p>
+                <p class="menu-card-desc">Reposado tequila, crème de cassis, lime, ginger beer · $12</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Tommy's Margarita</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Suffering</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Tommy's Margarita</h4>
-                <p class="menu-card-desc">Tequila, lime, agave</p>
+                <h4 class="menu-card-title">Suffering Bastard</h4>
+                <p class="menu-card-desc">Bourbon, gin, lemon, angostura, ginger beer · $12</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Strawberry Daiquiri</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Strawberry Daiquiri</h4>
-                <p class="menu-card-desc">Rum, fresh strawberry, lime</p>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Muni Margarita</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Muni Marg</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Muni Margarita</h4>
-                <p class="menu-card-desc">House signature margarita</p>
+                <p class="menu-card-desc">Pineapple and serrano infused tequila, dry curaçao, lime · $14</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Cock and Bull</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Cock & Bull</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Cock and Bull Special</h4>
-                <p class="menu-card-desc">House specialty</p>
+                <p class="menu-card-desc">Cognac, bourbon, bénédictine, dry curaçao, angostura · $14</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Banana Stand</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Tommy's</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Tommy's Margarita</h4>
+                <p class="menu-card-desc">Blanco tequila, lime, agave · $12</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Banana</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">There's Always Muni in the Banana Stand</h4>
-                <p class="menu-card-desc">Banana-forward tropical cocktail</p>
+                <p class="menu-card-desc">Rum blend, banana, rhum, coconut, pineapple, cinnamon, lime · $14</p>
               </div>
             </article>
           </div>
@@ -229,13 +278,12 @@
 
       <!-- ====================================================================
            DINNER SECTION
-           Categories: Small Plates, Sandwiches, Big Plates & Bowls
            ==================================================================== -->
       <section class="section" id="food">
         <div class="container">
           <h2 class="text-3xl mb-sm text-center">Dinner</h2>
           <p class="text-center text-sm text-muted mb-lg">
-            <a href="#zero-proof">Zero Proof</a> · <a href="#cocktails">Cocktails</a> · <a href="#brunch">Brunch</a>
+            <a href="#na-beer-wine">N/A Beer & Wine</a> · <a href="#zero-proof">Zero Proof</a> · <a href="#cocktails">Cocktails</a> · <a href="#brunch">Brunch</a>
           </p>
 
           <h3 class="text-xl mb-md text-primary">Small Plates</h3>
@@ -243,43 +291,78 @@
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Rangoon</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Chorizo Rangoon</h4>
-                <p class="menu-card-desc">Crispy wontons, chorizo, cream cheese</p>
+                <h4 class="menu-card-title">Chorizo Rangoons</h4>
+                <p class="menu-card-desc">Fried wontons, chorizo, cream cheese, scallion, with sweet and sour sauce · $11</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Chive Cake</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Chive Cake</h4>
-                <p class="menu-card-desc">Pan-fried, crispy edges <span class="tag">GF</span> <span class="tag">V</span></p>
+                <h4 class="menu-card-title">Chive Cakes</h4>
+                <p class="menu-card-desc">Fried chive cakes, chipotle soy vinaigrette, fried onion, cilantro · $12 <span class="tag">GF</span></p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Wings</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Egg Rolls</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">MuNi Wings</h4>
-                <p class="menu-card-desc">House-seasoned, crispy fried</p>
+                <h4 class="menu-card-title">Cheesesteak Egg Rolls</h4>
+                <p class="menu-card-desc">Fried spring rolls, beef, three cheese blend of cheddar, mozzarella & oaxaca, onion, bell pepper, with dragon sauce · $14</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Empanada</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Gapow Beef Empanada</h4>
-                <p class="menu-card-desc">Thai basil beef, flaky crust</p>
+                <p class="menu-card-desc">Fried empanada, beef, Thai basil, serrano, jasmine rice, cheese with creamy tiger cry sauce · $14</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Dumplings</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Birria Dumplings</h4>
-                <p class="menu-card-desc">Braised beef, consommé dip</p>
+                <p class="menu-card-desc">Fried birria beef dumplings, parmesan cheese crust, queso chihuahua, cilantro with consommé · $14</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Wings</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">MuNi Wings</h4>
+                <p class="menu-card-desc">Fried garlic & pepper wings with creamy tiger cry, sweet chili sauce · $13 <span class="tag">GF</span></p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Elotes</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Elotes</h4>
+                <p class="menu-card-desc">Grilled corn, spicy mayo, salsa verde, crema, tajin, cilantro, cotija · $13 <span class="tag">GF</span></p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Nachos</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">KC Loaded Nachos</h4>
-                <p class="menu-card-desc">Fully loaded, house chips <span class="tag">GF</span></p>
+                <p class="menu-card-desc">Tortilla chips, white cheese sauce, braised pork, pico de gallo, cotija cheese, cilantro, pickled onion · $14 <span class="tag">GF</span></p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Ribs</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Fried Honey Glazed Ribs</h4>
+                <p class="menu-card-desc">Fried braised pork ribs, honey-hoisin glaze, spicy peanut crunch, pickles · $14</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Pozole</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Tom Yum Pozole</h4>
+                <p class="menu-card-desc">Spicy pork soup with hominy, galangal, lemongrass, Thai chili, guajillo, crema, radish, cilantro, lime, with tortilla chips · $12 <span class="tag">GF</span></p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Salad</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Southwest Asian Salad</h4>
+                <p class="menu-card-desc">Black beans and roasted corn, romaine, crispy noodles, radish, pico de gallo, pickled onions, pepitas, cotija cheese, cumin & date vinaigrette · $14 <span class="tag">GF</span> <span class="tag">V</span></p>
               </div>
             </article>
           </div>
@@ -290,14 +373,14 @@
               <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Chicken</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Hot Honey Chicken Sandwich</h4>
-                <p class="menu-card-desc">Crispy chicken, hot honey glaze</p>
+                <p class="menu-card-desc">Battered fried chicken, Thai chili Salt Creek Farms hot honey, lettuce, Asian slaw, brioche bun, spicy mayo, served with fries · $16</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Burger</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Smash Dat MuNi</h4>
-                <p class="menu-card-desc">Double smash burger</p>
+                <p class="menu-card-desc">Two quarter pound beef smash patties, chili jam caramelized onion, American and Provolone cheese, spicy mayo, brioche bun, served with fries · $16</p>
               </div>
             </article>
           </div>
@@ -305,24 +388,31 @@
           <h3 class="text-xl mb-md text-primary">Big Plates & Bowls</h3>
           <div class="menu-grid">
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Tri Thai</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Kow Soi</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Kow Soi Carne Asada</h4>
+                <p class="menu-card-desc">Northern Thai coconut curry, carne asada, egg noodle, cilantro, scallion, pickled onion, crispy egg noodle · $24</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Panang</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Panang Curry Chicken Mole</h4>
+                <p class="menu-card-desc">Braised chicken leg, panang curry mole, seasoned jasmine rice, radish, cilantro, sesame seed · $23 *Contains peanuts</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Tacos</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Tri Thai Tacos</h4>
-                <p class="menu-card-desc">Three Thai-inspired tacos</p>
+                <p class="menu-card-desc">White corn tortillas, pico de gallo, cilantro, pickled onion, lime, tiger cry sauce, cilantro, cotija, salsa verde. Your choice of Braised Pork, Braised Beef, or Braised Jackfruit · $18 <span class="tag">V</span></p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Rice Bowl</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Shrimp</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">City Market Rice Bowl</h4>
-                <p class="menu-card-desc">Fresh, market-inspired <span class="tag">GF</span></p>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Kow Soi</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">Kow Soi Beef</h4>
-                <p class="menu-card-desc">Northern Thai curry noodles</p>
+                <h4 class="menu-card-title">Camerones a la Diabla</h4>
+                <p class="menu-card-desc">Shrimp, spicy chili sauce, cilantro served with jasmine rice · $27</p>
               </div>
             </article>
           </div>
@@ -334,87 +424,149 @@
       <!-- ====================================================================
            BRUNCH SECTION
            Saturday & Sunday 10am-2pm
-           Categories: Small Plates, Sandwiches, Big Plates & Bowls
            ==================================================================== -->
       <section class="section" id="brunch">
         <div class="container">
           <h2 class="text-3xl mb-sm text-center">Brunch</h2>
           <p class="text-center text-sm text-muted mb-sm">
-            <a href="#zero-proof">Zero Proof</a> · <a href="#cocktails">Cocktails</a> · <a href="#food">Dinner</a>
+            <a href="#na-beer-wine">N/A Beer & Wine</a> · <a href="#zero-proof">Zero Proof</a> · <a href="#cocktails">Cocktails</a> · <a href="#food">Dinner</a>
           </p>
           <p class="text-center text-muted mb-lg">Saturday & Sunday · 10am – 2pm</p>
 
           <h3 class="text-xl mb-md text-primary">Small Plates</h3>
           <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Avocado</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Rangoon</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Avocado Toast</h4>
-                <p class="menu-card-desc">Fresh avocado, sourdough (add egg)</p>
-              </div>
-            </article>
-            <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-bowl-small.svg');"><span>Parfait</span></div>
-              <div class="menu-card-content">
-                <h4 class="menu-card-title">River Market Parfait</h4>
-                <p class="menu-card-desc">Yogurt, granola, fresh fruit</p>
+                <h4 class="menu-card-title">Chorizo Rangoon</h4>
+                <p class="menu-card-desc">Fried wontons, chorizo, cream cheese, scallion, with sweet and sour · $11</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Empanada</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Muni Breakfast Empanada</h4>
-                <p class="menu-card-desc">Eggs, cheese, chorizo</p>
+                <p class="menu-card-desc">Bacon, scramble eggs, cheese, potato, onion, bell pepper with dragon sauce · $13</p>
               </div>
             </article>
-          </div>
-
-          <h3 class="text-xl mb-md text-primary">Sandwiches</h3>
-          <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Pork Belly</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-small.svg');"><span>Avocado</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Pork Belly Breakfast Sando</h4>
-                <p class="menu-card-desc">Crispy pork belly, egg, brioche</p>
+                <h4 class="menu-card-title">Avocado Toast</h4>
+                <p class="menu-card-desc">Organic multi grain toast, avocado, pico de gallo, cojita cheese (add fried egg $3) · $10</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl-small.svg');"><span>Parfait</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">River Market Parfait</h4>
+                <p class="menu-card-desc">Greek yogurt, berries, granola, honey · $12</p>
               </div>
             </article>
           </div>
 
           <h3 class="text-xl mb-md text-primary">Big Plates & Bowls</h3>
-          <div class="menu-grid">
+          <div class="menu-grid mb-xl">
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Thai Sausage</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Chinoquiles</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Thai Sausage Biscuit & Gravy</h4>
-                <p class="menu-card-desc">House Thai sausage, buttermilk biscuit</p>
+                <h4 class="menu-card-title">Chinoquiles</h4>
+                <p class="menu-card-desc">Corn tortilla chips, coconut curry salsa, pulled pork, queso fresco, crema, sunny side up eggs, cilantro, pickled sweet pepper · $18</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Burrito</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Muni Breakfast Burrito</h4>
+                <p class="menu-card-desc">Flour tortilla, braised pork, breakfast potatoes, scramble egg, cheese with creamy tiger, pico de gallo · $16</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Biscuit</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Fried Chicken Biscuit & Gravy</h4>
+                <p class="menu-card-desc">Fried chicken tenders, buttermilk biscuits, Thai sausage gravy, breakfast potatoes, hot sauce · $18</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-sandwich.svg');"><span>Sando</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Pork Belly Breakfast Sando</h4>
+                <p class="menu-card-desc">Char-Siu pork belly, fried egg, char-siu mayo, lettuce, pickled cucumber, brioche bun, breakfast potatoes · $18</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Classic</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">KC Classic Breakfast</h4>
+                <p class="menu-card-desc">Bacon, breakfast sausage links, sunny side up eggs, breakfast potatoes, organic multi grain toast · $18</p>
               </div>
             </article>
             <article class="menu-card">
               <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>French Toast</span></div>
               <div class="menu-card-content">
                 <h4 class="menu-card-title">Grilled Banana French Toast</h4>
-                <p class="menu-card-desc">Caramelized banana, maple</p>
+                <p class="menu-card-desc">Coconut milk French toast, spicy candied bacon, banana, peanut butter, honey, powdered sugar · $17</p>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="text-xl mb-md text-primary">Brunch Cocktails</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Mimosa</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Mimosa</h4>
+                <p class="menu-card-desc">By the Glass $9 · By the Pitcher $32</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>Fried Chicken</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-coupe.svg');"><span>Spritz</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Fried Chicken Biscuit & Gravy</h4>
-                <p class="menu-card-desc">Crispy chicken, sausage gravy</p>
+                <h4 class="menu-card-title">Bad Boy Bae Spritz</h4>
+                <p class="menu-card-desc">Bronson's Perennial Punch, Prosecco · $14</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-big.svg');"><span>KC Classic</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Bloody</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">KC Classic Breakfast</h4>
-                <p class="menu-card-desc">Eggs, meat, potatoes, toast</p>
+                <h4 class="menu-card-title">Bloody Mary</h4>
+                <p class="menu-card-desc">With Thai Basil Chili Vodka · $10 (+$1 bacon)</p>
               </div>
             </article>
             <article class="menu-card">
-              <div class="menu-card-image" style="background-image: url('./images/plate-bowl.svg');"><span>Chinoquiles</span></div>
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Michelada</span></div>
               <div class="menu-card-content">
-                <h4 class="menu-card-title">Chinoquiles</h4>
-                <p class="menu-card-desc">Thai-Mex chilaquiles fusion</p>
+                <h4 class="menu-card-title">Michelada</h4>
+                <p class="menu-card-desc">House mix, your choice of beer · $9</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Hurricane</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Hurricane</h4>
+                <p class="menu-card-desc">Over Proof Rum, Passion Fruit, Lemon · $10</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-collins.svg');"><span>Duck Duck</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Duck Duck Muni</h4>
+                <p class="menu-card-desc">Pineapple/Bison Grass Vodka, Lemon, Tiki Bitters, Blue Curaçao, and an Adorable Duck · $14</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Big Frank</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Big Frank</h4>
+                <p class="menu-card-desc">Bourbon, Elderflower, Strawberry, Angostura, Peychauds · $12</p>
+              </div>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-image" style="background-image: url('./images/cocktail-rocks.svg');"><span>Cootie Killer</span></div>
+              <div class="menu-card-content">
+                <h4 class="menu-card-title">Cootie Killer</h4>
+                <p class="menu-card-desc">Jagermeister, Lime, Agave (Don't knock it till you try it) · $12</p>
               </div>
             </article>
           </div>
@@ -425,7 +577,7 @@
         <div class="container container-sm text-center">
           <p class="text-sm text-muted">
             Menu items subject to change. Please ask your server about daily specials and dietary accommodations.
-            <br><span class="text-xs">GF = Gluten Free · V = Vegetarian</span>
+            <br><span class="text-xs">GF = Gluten Free · V = Vegetarian · *Contains Pork</span>
           </p>
         </div>
       </section>
