@@ -556,38 +556,47 @@
     (function() {
       var SUN = 0, MON = 1, TUE = 2, SAT = 6;
 
-      function isOpen() {
+      function getStatus() {
         var now = new Date();
         var day = now.getDay();
         var time = now.getHours() + now.getMinutes() / 60;
         var yesterday = day === SUN ? SAT : day - 1;
 
-        // After midnight until 1:30am - check if previous day was open
+        // After midnight until 1:30am - bar only from previous night
         if (time < 1.5) {
-          if (yesterday === MON) return false; // Monday closed
-          if (day === TUE) return false; // No carryover to Tuesday
-          return true;
+          if (yesterday === MON || day === TUE) return 'closed';
+          return 'bar';
         }
 
         // Monday closed all day
-        if (day === MON) return false;
+        if (day === MON) return 'closed';
 
-        // Weekend (Sat/Sun) - open 10am to 1:30am
+        // Weekend (Sat/Sun)
         if (day === SAT || day === SUN) {
-          return time >= 10;
+          if (time < 10) return 'closed';
+          if (time < 14) return 'brunch';
+          if (time < 16) return 'bar';
+          if (time < 24) return 'dinner';
         }
 
-        // Weekday (Tue-Fri) - open 4pm to 1:30am
-        return time >= 16;
+        // Weekday (Tue-Fri)
+        if (time < 16) return 'closed';
+        if (time < 24) return 'dinner';
+
+        return 'closed';
       }
 
       function update() {
         var el = document.getElementById('bar-status');
-        if (el) {
-          el.innerHTML = isOpen()
-            ? 'Bar is <span style="color:#C41E3A;">open</span>'
-            : 'Bar is <span style="color:#C41E3A;">closed</span>';
-        }
+        if (!el) return;
+        var status = getStatus();
+        var labels = {
+          brunch: 'Brunch is <span style="color:#C41E3A;">open</span>',
+          dinner: 'Dinner is <span style="color:#C41E3A;">open</span>',
+          bar: 'Bar is <span style="color:#C41E3A;">open</span>',
+          closed: 'Bar is <span style="color:#C41E3A;">closed</span>'
+        };
+        el.innerHTML = labels[status];
       }
 
       if (document.readyState === 'loading') {
