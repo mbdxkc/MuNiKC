@@ -69,13 +69,14 @@
 
       <section class="section-sm" style="padding-top:0;">
         <div class="container text-center">
-          <div class="flex flex-center gap-md flex-wrap">
-            <a href="#zero-proof" class="button button-secondary">Zero Proof</a>
-            <a href="#cocktails" class="button button-secondary">Cocktails</a>
-            <a href="#food" class="button button-secondary">Dinner</a>
-            <a href="#brunch" class="button button-secondary">Brunch</a>
-            <a href="#brunch-cocktails" class="button button-secondary">Brunch Cocktails</a>
+          <div class="flex flex-center gap-md flex-wrap" id="menu-nav">
+            <a href="#zero-proof" class="button button-secondary" data-menu="drinks">Zero Proof</a>
+            <a href="#cocktails" class="button button-secondary" data-menu="drinks">Cocktails</a>
+            <a href="#food" class="button button-secondary" data-menu="dinner">Dinner</a>
+            <a href="#brunch" class="button button-secondary" data-menu="brunch">Brunch</a>
+            <a href="#brunch-cocktails" class="button button-secondary" data-menu="brunch-drinks">Brunch Cocktails</a>
           </div>
+          <style>.menu-active{background:rgba(196,30,58,0.15)!important;}</style>
         </div>
       </section>
 
@@ -565,7 +566,7 @@
         // After midnight until 1:30am - bar only from previous night
         if (time < 1.5) {
           if (yesterday === MON || day === TUE) return 'closed';
-          return 'bar';
+          return 'bar-late';
         }
 
         // Monday closed all day
@@ -575,7 +576,7 @@
         if (day === SAT || day === SUN) {
           if (time < 10) return 'closed';
           if (time < 14) return 'brunch';
-          if (time < 16) return 'bar';
+          if (time < 16) return 'bar-gap';
           if (time < 24) return 'dinner';
         }
 
@@ -588,15 +589,40 @@
 
       function update() {
         var el = document.getElementById('bar-status');
-        if (!el) return;
+        var nav = document.getElementById('menu-nav');
         var status = getStatus();
-        var labels = {
-          brunch: 'Brunch is <span style="color:#C41E3A;">open</span>',
-          dinner: 'Dinner is <span style="color:#C41E3A;">open</span>',
-          bar: 'Bar is <span style="color:#C41E3A;">open</span>',
-          closed: 'Bar is <span style="color:#C41E3A;">closed</span>'
-        };
-        el.innerHTML = labels[status];
+
+        // Update status text
+        if (el) {
+          var labels = {
+            brunch: 'Brunch is <span style="color:#C41E3A;">open</span>',
+            dinner: 'Dinner is <span style="color:#C41E3A;">open</span>',
+            'bar-gap': 'Bar is <span style="color:#C41E3A;">open</span>',
+            'bar-late': 'Bar is <span style="color:#C41E3A;">open</span>',
+            closed: 'Bar is <span style="color:#C41E3A;">closed</span>'
+          };
+          el.innerHTML = labels[status];
+        }
+
+        // Highlight active menu buttons
+        if (nav) {
+          var btns = nav.querySelectorAll('[data-menu]');
+          var active = {
+            brunch: ['drinks', 'dinner', 'brunch', 'brunch-drinks'],
+            dinner: ['drinks', 'dinner'],
+            'bar-gap': ['drinks', 'brunch-drinks'],
+            'bar-late': ['drinks'],
+            closed: []
+          };
+          var activeMenus = active[status] || [];
+          btns.forEach(function(btn) {
+            if (activeMenus.indexOf(btn.dataset.menu) > -1) {
+              btn.classList.add('menu-active');
+            } else {
+              btn.classList.remove('menu-active');
+            }
+          });
+        }
       }
 
       if (document.readyState === 'loading') {
