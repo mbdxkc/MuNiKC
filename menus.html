@@ -63,6 +63,7 @@
           <p class="text-lg text-muted">
             Mexican-Thai fusion. Thoughtful drinks. Kansas City soul.
           </p>
+          <p id="bar-status" class="mt-md" style="font-size:1.1rem;"></p>
         </div>
       </section>
 
@@ -550,5 +551,52 @@
     <script src="./js/utils.min.js" defer></script>
     <script src="./js/header.min.js" defer></script>
     <script src="./js/footer.min.js" defer></script>
+
+    <script>
+    (function() {
+      var SUN = 0, MON = 1, TUE = 2, SAT = 6;
+
+      function isOpen() {
+        var now = new Date();
+        var day = now.getDay();
+        var time = now.getHours() + now.getMinutes() / 60;
+        var yesterday = day === SUN ? SAT : day - 1;
+
+        // After midnight until 1:30am - check if previous day was open
+        if (time < 1.5) {
+          if (yesterday === MON) return false; // Monday closed
+          if (day === TUE) return false; // No carryover to Tuesday
+          return true;
+        }
+
+        // Monday closed all day
+        if (day === MON) return false;
+
+        // Weekend (Sat/Sun) - open 10am to 1:30am
+        if (day === SAT || day === SUN) {
+          return time >= 10;
+        }
+
+        // Weekday (Tue-Fri) - open 4pm to 1:30am
+        return time >= 16;
+      }
+
+      function update() {
+        var el = document.getElementById('bar-status');
+        if (el) {
+          el.innerHTML = isOpen()
+            ? 'Bar is <span style="color:#4ade80;font-weight:600;">open</span>'
+            : 'Bar is <span style="color:#f87171;font-weight:600;">closed</span>';
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', update);
+      } else {
+        update();
+      }
+      setInterval(update, 60000);
+    })();
+    </script>
   </body>
 </html>
