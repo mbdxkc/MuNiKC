@@ -642,8 +642,11 @@ img{
 
 .hero-logo{
   margin: 0 auto 1.5rem;
-  max-width: 600px;
+  max-width: 90%;
   width: 100%;
+}
+@media(min-width:768px){
+  .hero-logo{max-width:900px;}
 }
 
 .hero-logo-img{
